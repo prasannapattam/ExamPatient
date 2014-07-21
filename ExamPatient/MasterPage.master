@@ -1,0 +1,187 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" ClientIDMode="Static" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <base target='_self'>
+    <title>Exam Patient</title>
+    <link rel="stylesheet" type="text/css" href="Styles/ui.core.css" />
+    <link rel="stylesheet" type="text/css" href="Styles/ui.dialog.css" />
+    <link rel="stylesheet" type="text/css" href="Styles/ui.theme.css" />
+    <link rel="stylesheet" type="text/css" href="Styles/base.css" />
+    <link rel="stylesheet" type="text/css" href="Styles/TCMS.css" />
+    <link rel="stylesheet" type="text/css" href="Styles/ui.datepicker.css" />
+    <link rel="stylesheet" type="text/css" href="tms1.css" />
+    <link rel="stylesheet" type="text/css" href="Styles/demos.css" />
+
+    <script type="text/javascript" src="Scripts/jquery-1.7.2.min.js"></script>
+    <script type="text/javascript" src="Scripts/jquery-ui-1.7.2.custom.min.js"></script>
+    <script type="text/javascript" src="Scripts/ui.core.js"></script>
+    <script type="text/javascript" src="Scripts/ui.tabs.js"></script>
+    <script type="text/javascript" src="Scripts/tb.border.js"></script>
+    <script type="text/javascript" src="Scripts/Helper.js"></script>
+    <script type="text/javascript" src="Scripts/ui.datepicker.js"></script>
+    <script type="text/javascript" src="Scripts/ExamMulti.js"></script>
+    <script type="text/javascript" src="Scripts/ExamValidations.js"></script>
+    <script type="text/javascript" src="Scripts/jquery.autocorrect-2.0.js"></script>
+    <script type="text/javascript" src="Scripts/jquery.json-2.3.js"></script>
+    <script type="text/javascript" src="Scripts/jquery-webmethod.js"></script>
+
+    <script type="text/javascript">
+        $(function () {
+            $("input").tbBorder();
+        });
+
+        //variable that will store the id of the last clicked row
+        var previousRow;
+
+        function ChangeRowColor(row, firstRow, rowPatientID, savedInd) {
+            if (previousRow == null)
+                previousRow = firstRow;
+            if (previousRow == row)
+                return;
+            //If there is row clicked earlier
+            else if (previousRow != null)
+            //change the color of the previous row back to white
+                document.getElementById(previousRow).style.backgroundColor = "#ebecec";
+
+            //change the color of the current row to light yellow
+
+            var obj = document.getElementById(row);
+            document.getElementById(row).style.backgroundColor = "#ffffda";
+            //for next row to be clicked
+            previousRow = row;
+            $('#patientID').val(rowPatientID);
+
+            if (savedInd == 1)
+                $("#btnCorrect").val("EXAM NOTES");
+            if (savedInd == 0)
+                $("#btnCorrect").val("CORRECT");
+
+        }
+
+
+        function RedirectPatient(pagetype, patienttype) {
+            var pageurl
+            if (pagetype == 'exam')
+                pageurl = 'ExamPatient.aspx?PatientID=';
+            if (pagetype == 'patient')
+                pageurl = 'Patient.aspx?PatientID=';
+            if (pagetype == 'history')
+                pageurl = 'History.aspx?PatientID=';
+            if (pagetype == 'schedule')
+                pageurl = 'Schedule.aspx?PatientID=';
+            if (pagetype == 'report')
+                pageurl = 'Report.aspx?ExamID=';
+            if (pagetype == 'printexam')
+                pageurl = 'PrintPatient.aspx?ExamID=';
+            if (pagetype == 'user')
+                pageurl = 'UserEdit.aspx?UserID=';
+            if (pagetype == 'correct') {
+                var examID = $('#hdnPatientID').val();
+                pageurl = 'ExamPatient.aspx?PatientID=' + examID + '&ExamID='
+            }
+            if (pagetype == 'print') {
+                var examID = $('#hdnPatientID').val();
+                pageurl = 'ExamPatient.aspx?Print=1&PatientID=' + examID + '&ExamID='
+            }
+            if (pagetype == 'default')
+                pageurl = 'ExamPatient.aspx?ExamDefaultID=';
+
+//            if (pagetype == 'user')
+//                pageurl += $('#patientID').val();
+//            else
+//            {
+//                pageurl += $('#patientID').val();
+//            }
+
+            pageurl += $('#patientID').val();
+
+            location.href = pageurl;
+            return false;
+
+        }
+   </script>
+
+    <style type="text/css">
+        .style1
+        {
+            width: 674px;
+        }
+        .style2
+        {
+            width: 223px;
+        }
+    </style>
+
+</head>
+<body>
+    <form id="ExamPt" runat="server">
+    <asp:Panel ID="pnlMasterHeader" runat="server">
+        <div>
+            <div id="msContainer" align="left">
+                <div id="msheadContent" align="left">
+                    <table width="991px">
+                        <tr>
+                            <td rowspan="2" width="50px">
+                                <div id="msLogo">
+                                    <a href="default.aspx">
+                                        <img id="ImgLogo" src="~/Images/newlogo.gif" runat="server" width="50" height="50" alt="" visible="true" /></a>
+                                        
+                                </div>
+                            </td>
+                        
+                            <td valign="bottom">
+                                <div id="msTraffic"><asp:Literal ID="ltrl" runat="server" Visible="true">LONG ISLAND PEDIATRIC OPHTHALMOLOGY AND STRABISMUS, P.C.</asp:Literal></div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td valign="bottom" align="right" nowrap="nowrap">
+                                <asp:Panel ID="pnlMenu" runat="server">
+                                    <a class="mnu" href="default.aspx">Home</a><span class="mnuText">|</span>
+<%--                                    <a class="mnu" href="Dashboard.aspx">Dashboard</a><span class="mnuText">|</span>
+--%>                                    <a class="mnu" href="PrintQueue.aspx">Print Queue</a><span class="mnuText">|</span> 
+                                    <a class="mnu" href="ExamDefaults.aspx">Defaults</a><span class="mnuText">|</span> 
+                                    <a class="mnu" href="DropDowns.aspx">Drop Downs</a><span class="mnuText">|</span> 
+                                    <a class="mnu" href="AutoCorrect.aspx">Autocorrect</a><span class="mnuText">|</span> 
+                                    <a class="mnu" href="User.aspx">Users</a><span class="mnuText">|</span> 
+                                    <a class="mnu" href="Logout.aspx">Logout</a>
+                                </asp:Panel>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </asp:Panel>
+    <div style="width: 986px; height: auto; padding-left: 5px; float: left;">
+        <div id="band">
+            <div id="band_text">
+                <asp:Label ID="lblTitle" runat="server"></asp:Label>
+            </div>
+        </div>
+        <div class="screenOuterBorder">
+            <div class="screenInnerBorder">
+                <div class="screenBorderColor">
+                    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                    </asp:ContentPlaceHolder>
+                </div>
+            </div>
+            <br />
+        </div>
+        <div id="mydialog" 
+            style="padding-top: 25px; display:none;" 
+            class="modalBackground">
+            <div align="center" style="margin-top: 13px;">
+                <img src="../Images/progressInd.gif" />
+                <span class="updateProgressMessage">Loading ...</span>
+            </div>
+        </div>
+
+        <asp:HiddenField ID="hdnPageTitle" runat="server" />
+        <asp:HiddenField ID="hdnTimeOut" runat="server" />    
+    </div>
+    </form>
+</body>
+</html>

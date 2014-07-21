@@ -1,0 +1,52 @@
+﻿
+ 
+
+
+	 <asp:TextBox SkinID="skintxtMedium" runat="server" Width="185" CssClass="textStyle" ></asp:TextBox>
+     
+     <asp:TextBox SkinID="skintxtXMedium" runat="server" Width="130" CssClass="textStyle"></asp:TextBox>
+     
+     <asp:TextBox SkinID="skintxtSmall" runat="server" Width="80" CssClass="textStyle"></asp:TextBox>     
+     <asp:TextBox SkinID="skintxtMini" runat="server" Width="55" CssClass="textStyle"></asp:TextBox>     
+     <asp:TextBox SkinID="skintxtTiny" runat="server" Width="20" CssClass="textStyle"></asp:TextBox>     
+     
+     <asp:TextBox SkinID="skintxtLarge" runat="server" Width="393" CssClass="textStyle"></asp:TextBox>
+
+     <asp:TextBox SkinID="skinMultiLine" runat="server" CssClass="textStyleMultiLine"></asp:TextBox>
+
+     <asp:LinkButton SkinID="skinlnkButton" runat="server" CssClass="linkButtonStyle"></asp:LinkButton>
+     
+        <asp:DropDownList runat="server" CssClass="comboStyle"></asp:DropDownList>
+        <asp:DropDownList SkinID="skinCombo_CCHistory" runat="server" CssClass="comboStyle_CCHistory"></asp:DropDownList>
+     
+<asp:Label SkinID="skinError" runat="server" CssClass="labelError"></asp:Label>
+<asp:Label SkinID="skinLbl" runat="server" CssClass="labelStyle"></asp:Label>
+<asp:Label SkinID="skinDataLbl" runat="server" CssClass="labelNormalStyle"></asp:Label>
+<asp:Label SkinID="skinLblwidth" runat="server" CssClass="lblwidthStyle"></asp:Label>
+
+<asp:Label SkinID="lblHeader" runat="server" CssClass="lblHeader"></asp:Label>
+
+<asp:Button SkinID="skinBtn" runat="server" CssClass="btnStyle"></asp:Button>
+
+<asp:Button SkinID="skinBtnSmall" runat="server" CssClass="btnStyleSmall"></asp:Button>
+
+<asp:Button SkinID="skinBtnGray" runat="server" CssClass="btnStyleGray"></asp:Button>
+<asp:Button SkinID="skinLargeBtn" runat="server" CssClass="largebtnStyle"></asp:Button>
+
+<asp:Image SkinID="imgBottom" runat="server" ImageUrl="~/images/white_botcurve.gif" Width="966" Height="9"></asp:Image>
+
+<asp:Image SkinID="imgTop" runat="server" ImageUrl="~/images/white_topcurve.gif" Width="966" Height="9"></asp:Image>
+
+<asp:Image SkinID="imgYes" runat="server" ImageUrl="~/images/yes2.gif" Width="14" Height="14"></asp:Image>
+
+<asp:Image SkinID="imgNo" runat="server" ImageUrl="~/images/no2.gif" Width="14" Height="14"></asp:Image>
+
+<asp:Image SkinID="imgCitation" runat="server" Width="33" Height="33" ImageUrl="~/Images/docket_history2_03.gif"></asp:Image>
+
+<asp:Image SkinID="imgRequired" runat="server" ImageUrl="~/images/Required.gif" Width="15" Height="15"></asp:Image>
+
+<asp:Image SkinID="imgchkWidth" runat="server"  Width="14" Height="14"></asp:Image>
+
+<asp:Image SkinID="imgCitationData" runat="server" Width="450" Height="450" ImageUrl="~/Images/L307094_170.GIF"></asp:Image>
+
+<asp:ImageButton SkinID="imgCitationbtn" runat="server" Width="33" Height="33" ImageUrl="~/Images/docket_history2_03.gif"></asp:ImageButton>

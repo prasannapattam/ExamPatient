@@ -1,0 +1,1106 @@
+body
+{
+    font-family: Arial, Helvetica, sans-serif;
+    /*overflow-x: hidden;*/
+}
+
+.focusctrl {
+    border: 2px solid #AA88FF;
+    background-color: #FFEEAA;
+}
+
+.correctctrl {
+    border: 2px solid #AA88FF;
+    background-color: Aqua;
+}
+
+#msMenuArea
+{
+    width: 500px;
+    height: auto;
+    float: right;
+}
+
+
+#msContainer
+{
+    width: 991px;
+    height: 72px;
+    float: left;
+    background-image: url(../images/body_topbg.gif);
+    background-repeat: repeat-x;
+}
+
+.mnuText
+{
+    color: #FFFFFF;
+}
+
+.mnu:link
+{
+    color: #FFFFFF;
+    text-decoration: none;
+}
+.mnu:visited
+{
+    color: #FFFFFF;
+    text-decoration: none;
+}
+.mnu:hover
+{
+    color: #FFFFFF;
+    text-decoration: underline;
+}
+
+.prooffieldset
+{
+    border-style: inset;
+    border-width: 1px;
+    border-color: Gray;
+    padding: 0.5em;
+    font-size: 11px;
+    width: auto;
+    font-family: Arial, Helvetica, sans-serif;
+}
+#msheadContent
+{
+    width: 940px;
+    height: auto;
+}
+
+#msLogo
+{
+    width: 60px;
+    height: 50px;
+    float: left;
+    padding-top: 21px;
+}
+
+#msLogin
+{
+    float: right;
+    font-size: 11px;
+    padding-right: 22px;
+    color: #FFFFFF;
+    height: auto;
+    width: 250px;
+}
+
+
+#msLogin a
+{
+    color: #FFFFFF;
+    text-decoration: none;
+}
+#msLogin a:hover
+{
+    color: #FFFFFF;
+    text-decoration: underline;
+}
+
+
+#msMenuSubmenu
+{
+    width: 395px;
+    float: right;
+    font-size: 12px;
+    color: #FFFFFF;
+    font-weight: normal;
+    text-align: left;
+}
+
+
+#msMenuSubmenu a
+{
+    color: #FFFFFF;
+    text-align: left;
+    text-decoration: none;
+}
+
+#msMenuSubmenu a:hover
+{
+    color: #FFFFFF;
+    text-align: left;
+    text-decoration: underline;
+}
+
+
+
+#msTraffic
+{
+    float: left;
+    font-size: 19px;
+    color: white;
+    height: auto;
+    width: 590px;
+    font-weight: bold;
+    padding-top: 15px;
+    padding-bottom: 1px;
+}
+
+
+
+#msDev
+{
+    float: right;
+    font-size: 10px;
+    color: #ffffff;
+    height: auto;
+    width: 95px;
+    font-weight: bold;
+    padding-bottom: 2px;
+}
+
+.exampanel
+{
+    cursor: pointer;
+    width: 938px;
+    height: 26px;
+    background-image: url(../images/panelbg.gif);
+    background-repeat: repeat-x;
+    color: white;
+    vertical-align: middle;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.exampanelsec
+{
+    cursor: pointer;
+    width: 895px;
+    height: 26px;
+    background-image: url(../images/panelbg.gif);
+    background-repeat: repeat-x;
+    color: white;
+    vertical-align: middle;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.tcmsHeader
+{
+    cursor: pointer;
+    width: 881px;
+    height: 26px;
+    background-image: url(../images/blue_bg.gif);
+    background-repeat: repeat-x;
+    color: white;
+    vertical-align: middle;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.tcmsMinuteHeader
+{
+    cursor: pointer;
+    width: 935px;
+    height: 26px;
+    background-image: url(../images/blue_bg.gif);
+    background-repeat: repeat-x;
+    color: white;
+    vertical-align: middle;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.tcmsSetCourt
+{
+    cursor: pointer;
+    width: 660px;
+    height: 26px;
+    background-image: url(../images/panelbg.gif);
+    background-repeat: repeat-x;
+    color: white;
+    vertical-align: middle;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.tcmsSetCourtAP
+{
+    cursor: pointer;
+    width: 588px;
+    height: 26px;
+    background-image: url(../images/panelbg.gif);
+    background-repeat: repeat-x;
+    color: white;
+    vertical-align: middle;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.tcmsAccept
+{
+    cursor: pointer;
+    width: 593px;
+    height: 26px;
+    background-image: url(../images/panelbg.gif);
+    background-repeat: repeat-x;
+    color: white;
+    vertical-align: middle;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.buttontest
+{
+    position: relative;
+    float: left;
+    background-image: url(../images/blue_butbg.gif);
+    color: #FFFFFF;
+    display: block;
+    width: 115px;
+    height: 33px;
+    margin: 0;
+    padding: 0;
+    font-size: 12px;
+    font-family: Arial;
+    font-weight: bold;
+    text-align: center;
+    cursor: pointer;
+    line-height: 32px;
+    margin-right: 3px;
+}
+
+.screenOuterBorder
+{
+    width: 986px;
+    height: auto;
+    padding-bottom: 2px;
+    float: left;
+    background-color: #ffffff;
+}
+
+.screenInnerBorder
+{
+    width: 982px;
+    height: auto;
+    padding-left: 2px;
+    padding-right: 2px;
+    float: left;
+}
+
+.screenBorderColor
+{
+    width: 982px;
+    height: auto;
+    padding-bottom: 10px;
+    float: left;
+    background-color: #dedede;
+}
+
+.labelStyle
+{
+    height: auto;
+    float: left;
+    font-size: 11px;
+    padding-right: 5px;
+    font-weight: bold;
+    padding-left: 10px;
+    color: Black;
+    padding-top: 4px;
+}
+.labelNormalStyle
+{
+    height: auto;
+    float: left;
+    font-size: 11px;
+    padding-right: 5px;
+    font-weight: normal;
+    padding-left: 10px;
+    color: Black;
+    padding-top: 4px;
+    }
+.labelError
+{
+    height: auto;
+    width: auto;
+    float: left;
+    font-size: 16px;
+    padding-right: 5px;
+    padding-left: 10px;
+    color: #1e344b;
+    padding-top: 4px;
+    color: Red;
+}
+.labelHeaderStyle
+{
+    height: auto;
+    text-align: ;
+    font-size: 11px;
+    font-weight: bold;left
+    color: Black;
+    white-space:nowrap;
+}
+.labelHeaderRightStyle
+{
+    height: auto;
+    text-align: right;
+    font-size: 11px;
+    font-weight: bold;
+    color: Black;
+    white-space:nowrap;
+}
+
+.amountlabelStyle
+{
+    height: auto;
+    width: auto;
+    float: left;
+    font-size: 11px;
+    padding-right: 5px;
+    font-weight: bold;
+    color: #1e344b;
+    padding-top: 4px;
+}
+
+.amountlabelWOP
+{
+    height: auto;
+    width: auto;
+    padding-left: 10px;
+    float: left;
+    font-size: 11px;
+    font-weight: bold;
+    color: #1e344b;
+    padding-top: 4px;
+}
+
+.labelStyleWithOutPadding
+{
+    height: auto;
+    width: auto;
+    float: left;
+    font-size: 11px;
+    font-weight: bold;
+    color: #1e344b;
+    padding-top: 5px;
+}
+
+.labelStyleGS
+{
+    height: auto;
+    width: auto;
+    float: left;
+    font-size: 11px;
+    font-weight: bold;
+    color: #1e344b;
+    padding-top: 4px;
+    padding-right: 2px;
+}
+
+.labelStyleLeftPadding
+{
+    height: auto;
+    width: auto;
+    float: left;
+    font-size: 11px;
+    padding-right: 5px;
+    font-weight: bold;
+    padding-left: 5px;
+    color: #1e344b;
+    padding-top: 4px;
+}
+
+.inchlabelStyle
+{
+    height: auto;
+    width: auto;
+    font-size: 11px;
+    font-weight: bold;
+    padding-left: 5px;
+    color: #1e344b;
+    padding-right: 5px;
+}
+
+.lblwidthStyle
+{
+    height: auto;
+    float: left;
+    font-size: 11px;
+    font-weight: bold;
+    padding-left: 20px;
+    color: #1e344b;
+    padding-top: 4px;
+    padding-right: 5px;
+}
+
+.linkButtonStyle
+{
+    height: auto;
+    width: auto;
+    float: left;
+    font-size: 11px;
+    padding-right: 5px;
+    font-weight: bold;
+    padding-top: 4px;
+}
+
+.table
+{
+    display: table;
+}
+
+.tr
+{
+    display: table-row;
+}
+
+.td
+{
+    display: table-cell;
+}
+
+.tdMulti
+{
+    display: table-cell;
+    vertical-align: top;
+}
+
+.tabUserctrlBG
+{
+    width: 870px;
+    height: auto;
+    background-color: #FFFFFF;
+    float: left;
+}
+
+.btnStyle
+{
+    position: relative;
+    float: left;
+    background-image: url(../images/blue_butbg.gif);
+    color: #FFFFFF;
+    display: block;
+    width: 125px;
+    height: 33px;
+    margin: 0;
+    padding: 0;
+    font-size: 12px;
+    font-weight: bold;
+    text-align: center;
+    cursor: pointer;
+    line-height: 32px;
+    margin-right: 3px;
+    border: none;
+}
+.btnStyleSmall
+{
+    position: relative;
+    float: left;
+    background-image: url(../images/blue_butbg_small1.gif);
+    color: #FFFFFF;
+    display: block;
+    width: 75px;
+    height: 25px;
+    margin: 0;
+    padding: 0;
+    font-size: 10px;
+    font-weight: bold;
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+    line-height: 25px;
+    margin-right: 3px;
+    border: none;
+}
+.btnStyleGray
+{
+    position: relative;
+    float: left;
+    background-image: url(../images/gray_butbg.gif);
+    color: Gray;
+    display: block;
+    width: 125px;
+    height: 33px;
+    margin: 0;
+    padding: 0;
+    font-size: 12px;
+    font-weight: bold;
+    text-align: center;
+    cursor: pointer;
+?   line-height: 32px;
+    margin-right: 3px;
+    border: none;
+}
+.largebtnStyle
+{
+    position: relative;
+    float: left;
+    background-image: url(../images/blue_largebutbg.GIF);
+    color: #FFFFFF;
+    display: block;
+    width: 150px;
+    height: 33px;
+    margin: 0;
+    padding: 0;
+    font-size: 12px;
+    font-weight: bold;
+    text-align: center;
+    cursor: pointer;
+    line-height: 32px;
+    margin-right: 3px;
+    border: none;
+}
+
+.btnGroup
+{
+    padding-top: 10px;
+    padding-left: 20px;
+    padding-bottom: 20px;
+    float: left;
+}
+
+.lblAddupdate
+{
+    padding-left: 10px;
+    float: left;
+    color: #A52927;
+    font-weight: bold;
+    font-size: 12px;
+    padding-top: 10px;
+}
+
+.textStyle
+{
+    height: 15px;
+    border: #1e344b solid 1px;
+    padding-left: 5px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 11px;
+    font-weight: normal;
+    color: #1e344b;
+    padding-top: 4px;
+}
+
+.textStyleMultiLine
+{
+    border: #1e344b solid 1px;
+    padding-left: 5px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 11px;
+    font-weight: normal;
+    color: #1e344b;
+    padding-top: 4px;
+}
+
+
+.divoboutGrid
+{
+    width: 872px;
+    margin-top: 7px;
+}
+
+
+.divTimeBorder
+{
+    width: 51px;
+    height: 20px;
+    float: left;
+    font-size: 11px;
+    font-weight: normal;
+    color: #1e344b;
+    border: #1e344b solid 1px;
+}
+
+
+.divZipBorder
+{
+    width: 77px;
+    height: 20px;
+    float: left;
+    font-size: 11px;
+    font-weight: normal;
+    color: #1e344b;
+    border: #1e344b solid 1px;
+}
+
+
+.divDateBorder
+{
+    width: 105px;
+    height: 20px;
+    float: left;
+    font-size: 11px;
+    font-weight: normal;
+    color: #1e344b;
+    border: #1e344b solid 1px;
+}
+
+.divJobBorder
+{
+    width: 92px;
+    height: 20px;
+    float: left;
+    font-size: 11px;
+    font-weight: normal;
+    color: #1e344b;
+    border: #1e344b solid 1px;
+}
+
+.divPhoneBorder
+{
+    width: 97px;
+    height: 20px;
+    float: left;
+    font-size: 11px;
+    font-weight: normal;
+    color: #1e344b;
+    border: #1e344b solid 1px;
+}
+
+
+.divexcolBorder
+{
+    width: 30px;
+    height: 15px;
+    float: left;
+    font-size: 11px;
+    font-family: Arial;
+    font-weight: bold;
+    text-align: left;
+    color: #1e344b;
+    padding-right: 4px;
+}
+
+.divExpand
+{
+    font-size: 11px;
+    font-weight: normal;
+    float: right;
+    padding-right: 50px;
+}
+
+.divExpandTab
+{
+    font-size: 11px;
+    font-weight: normal;
+    float: right;
+    padding-right: 25px;
+}
+
+.divBorder
+{
+    width: 138px;
+    height: 20px;
+    float: left;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 11px;
+    font-weight: normal;
+    color: #1e344b;
+    border: #1e344b solid 1px;
+}
+
+.txtBorder
+{
+    border: #ffffff solid 1px;
+    font-size: 11px;
+    font-weight: normal;
+    color: #1e344b;
+}
+
+#tabs
+{
+    width: 966px;
+    height: auto;
+    float: left;
+    padding-top: 7px;
+}
+
+.tcmspnlHeader
+{
+    display: table-cell;
+    vertical-align: middle;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.fixedLabel
+{
+    display: table-cell;
+    width: 150px;
+    height: auto;
+    text-align: left;
+    float: left;
+    font-size: 11px;
+    font-weight: normal;
+    color: #1e344b;
+}
+
+.fixedLabelsetCourt:fixedLabel
+{
+    width: 180px;
+}
+.fixedLabelAccept:fixedLabel
+{
+    width: 70px;
+}
+
+
+.divAccept
+{
+    float: left;
+    position: relative;
+    width: 595px;
+}
+
+.lblHeader
+{
+    width: auto;
+    height: auto;
+    padding-bottom: 10px;
+    font-size: 13px;
+    color: #0000FF;
+    font-weight: bold;
+    padding-left: 5px;
+    float: left;
+}
+
+.divSSNBorder
+{
+    width: 87px;
+    height: 20px;
+    float: left;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 11px;
+    font-weight: normal;
+    color: #1e344b;
+    border: #1e344b solid 1px;
+}
+
+.lknAddVehicle
+{
+    font-size: 13px;
+}
+
+
+.tabBackground
+{
+    width: 966px;
+    heigh?: auto;
+    background-color: #FFFFFF;
+    float: left;
+}
+
+.citOptionbtnleft
+{
+    background-image: url(../images/box1_left.gif);
+    width: 7px;
+    height: 33px;
+    float: left;
+}
+
+.citOptionbtnBG
+{
+    background-image: url(../images/box1_bg.gif);
+    width: 240px;
+    background-repeat: repeat-x;
+    height: 33px;
+    float: left;
+}
+
+.citOptionbtnright
+{
+    background-image: url(../images/box1_right.gif);
+    width: 6px;
+    height: 33px;
+    float: left;
+}
+
+.btntcmsSearch
+{
+    position: relative;
+    background-image: url(../images/blue_butbg.gif);
+    color: #FFFFFF;
+    display: block;
+    width: 125px;
+    height: 33px;
+    margin: 0;
+    padding: 0;
+    font-size: 12px;
+    font-weight: bold;
+    text-align: center;
+    cursor: pointer;
+    line-height: 32px;
+    margin-right: 3px;
+    border: none;
+}
+
+.optionbtnLeft
+{
+    background-image: url(../images/box1_left.gif);
+    width: 7px;
+    height: 33px;
+    float: left;
+}
+
+.optionbtnBG
+{
+    background-image: url(../images/box1_bg.gif);
+    background-repeat: repeat-x;
+    height: 33px;
+    float: left;
+}
+
+.fieldset
+{
+    background-image: url(../images/box1_bg.gif);
+    background-repeat: repeat-x;
+    height: auto;
+    float: left;
+}
+
+.optionbtnRight
+{
+    background-image: url(../images/box1_right.gif);
+    width: 6px;
+    height: 33px;
+    float: left;
+}
+
+.comboStyle
+{
+    height: 20px;
+    width: auto;
+    font-size: 11px;
+    font-weight: bold;
+    color: #1e344b;
+    border: #1e344b solid 1px;
+}
+.comboStyle_CCHistory
+{
+    height: 20px;
+    width: 190px;
+    font-size: 11px;
+    font-weight: bold;
+    color: #1e344b;
+    border: #1e344b solid 1px;
+}
+.multilinetext
+{
+    overflow: hidden;
+    height: 15px;
+    float: left;
+    border: #1e344b solid 1px;
+    padding-left: 5px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 11px;
+    font-weight: normal;
+    color: #1e344b;
+    padding-top: 4px;
+}
+
+.converttextStyle
+{
+    height: 15px;
+    float: left;
+    border: #1e344b solid 1px;
+    padding-left: 5px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 11px;
+    font-weight: normal;
+    color: #1e344b;
+    padding-top: 4px;
+    text-transform: uppercase;
+}
+.DisplayDiv
+{
+    border-right: 1px outset;
+    border-top: 1px outset;
+    border-left: 1px outset;
+    border-bottom: 1px outset;
+    font-weight: normal;
+    font-size: 11px;
+    color: #330033;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.tableRow
+{
+    height: auto;
+    text-align: left;
+    font-size: 11px;
+    font-weight: bold;
+    color: #1e344b;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    border-bottom-color: #330033;
+    border-right-width: 1px;
+    border-right-style: solid;
+    border-right-color: #330033;
+}
+
+
+
+.tabBackColor
+{
+    white-space: normal;
+    width: 932px;
+    height: auto;
+    background-color: #FFFFFF;
+    float: left;
+    padding-top: 10px;
+    padding-left: 10px;
+}
+.PopupBackColor
+{
+    white-space: normal;
+    width: 890px;
+    height: auto;
+    background-color: #FFFFFF;
+    float: left;
+}
+
+.devColor
+{
+    float: left;
+    font-size: 13px;
+    color: Yellow;
+    height: auto;
+}
+.row
+{
+    background-image: url(row1.gif);
+    background-repeat: repeat-x;
+    background-position: bottom;
+    background-color: #f6f7f7;
+    color: #4B555E;
+}
+.rowalternative
+{
+    background-image: url(row2.gif);
+    background-repeat: repeat-x;
+    background-position: bottom;
+    background-color: #ebecec;
+    color: #4B555E;
+}
+.row2
+{
+    font-family: Tahoma;
+    font-size: 12px;
+    font-weight: normal;
+    color: #1B599A;
+    text-decoration: none;
+    text-align: center;
+    background-color: #EEEEEE;
+}
+.row1
+{
+    font-family: Tahoma;
+    font-size: 11px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #0C416F;
+    background-image: url(../Styles/premiere_blue/record_group_header_padding.gif);
+    text-align: left;
+    border: 0px;
+    padding-left: 10px;
+    height: 20px;
+    padding-bottom: 6px;
+    font-weight: bold;
+    left: expression(parentNode.parentNode.p?rentNode.parentNode.scrollLeft); /* IE5+ only */
+    position: relative;
+    z-index: 10;
+}
+.white-bg
+{
+    background-color: #FFFFFF;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 11px;
+    font-weight: bold;
+    color: #1B599A;
+    text-decoration: none;
+    text-align: left;
+    border-left: 1px solid #a3aab7;
+    border-right: 1px solid #a3aab7;
+    border-bottom: 1px solid #a3aab7;
+    border-top: 1px solid #a3aab7;
+}
+.sub-title
+{
+    font-family: Tahoma;
+    font-size: 11px;
+    font-weight: bold;
+    color: #1B599A;
+    text-decoration: none;
+    text-indent: 2pt;
+}
+
+.exampanelMenu
+{
+    cursor: pointer;
+    width: 250px;
+    height: 27px;
+    background-image: url(../images/blue_bg.gif);
+    background-repeat: repeat-x;
+    color: white;
+    vertical-align: top;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.exampanelRed
+{
+    cursor: pointer;
+    width: 250px;
+    height: 26px;
+    background-image: url(../images/panelbg.gif);
+    background-repeat: repeat-x;
+    color: white;
+    vertical-align: top;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.tcmsupbutton
+{
+    width: 22;
+    height: 20;
+    float: left;
+    background-image: url(../images/SliderArrowUp.gif);
+}
+.tcmsbottombutton
+{
+    width: 22;
+    height: 20;
+    float: left;
+    background-image: url(../images/SliderArrowDown.gif);
+}
+
+/* Added for Progress in Minute Order*/
+.modalBackground
+{
+    background-color: Gray;
+    filter: alpha(opacity=60);
+    opacity: 0.60;
+}
+.updateProgress
+{
+    border-width: 1px;
+    border-style: solid;
+    background-color: #FFFFFF;
+    position: absolute;
+    width: 150px;
+    height: 50px;
+}
+.updateProgressMessage
+{
+    margin: 3px;
+    font-family: Trebuchet MS;
+    font-size: small;
+    vertical-align: middle;
+}
+
+
+
+.gridAll {width: 80%; background-color: #fff; margin: 5px 0 10px 0; border: 1px solid #ebecec; border-collapse:collapse;}
+.gridAll th { padding: 4px 5px; color: #0C416F; font-weight:bold; 
+                 background-image: url(../images/header_without_grouping.gif); 
+                 border-left: 1px solid #C3C9CE;border-right: 1px solid #C3C9CE; 
+                 font-size: 11px; font-family: Arial; font-weight: bold;  text-align:left;}
+
+.gridRow { padding: 2px; padding-left:6px;  font-size: 11px;
+    font-family: Arial;
+    font-weight:normal;
+    text-align:left;
+	border-right: 1px solid #C3C9CE;
+	background-image: url(images/row2.gif);
+		background-repeat:repeat-x;
+		background-position:bottom;
+		background-color:#ebecec;
+	
+	color:#1e344b;  }
+	
+.gridSelectedRow { padding: 2px; padding-left:6px;  font-size: 11px;
+    font-family: Arial;
+    font-weight:normal;
+    text-align:left;
+	border-right: 1px solid #C3C9CE;
+	background-image: url(images/row2.gif);
+		background-repeat:repeat-x;
+		background-position:bottom;
+		background-color:#ffffda;
+	
+	color:#1e344b;  }

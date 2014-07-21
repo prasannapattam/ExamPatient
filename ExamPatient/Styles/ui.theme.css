@@ -1,0 +1,36 @@
+.ui-dialog { background: #ffffff; }
+.ui-dialog .ui-dialog-content {  background: #ffffff;  }
+.ui-dialog .ui-dialog-titlebar  { background-image: url(../images/panelbg.gif); background-repeat:repeat-x;
+color:white;
+vertical-align: middle;	 }
+.ui-dialog .ui-dialog-buttonpane{background: #ffffff;  float:right}
+.ui-dialog .ui-dialog-buttonpane button{ position: relative;
+    float: left;
+    background-image: url(../images/blue_butbg.gif);
+    color: #FFFFFF;
+    display: block;
+    width: 125px;
+    height: 33px;
+    margin: 0;
+    font-size: 12px;    
+    font-weight: bold;
+    text-align: center;
+    cursor: pointer;
+	line-height:32px;
+    margin-right:3px;
+	border:none;}
+	
+	/* Interaction states
+----------------------------------*/
+.ui-state-default, .ui-widget-content .ui-state-default {background: #f6f6f6 url(images/ui-bg_glass_100_f6f6f6_1x400.png) 50% 50% repeat-x; font-weight: bold; color: #1c94c4; outline: none; }
+.ui-state-active, .ui-widget-content .ui-state-active { background: #ffffff url(images/ui-bg_glass_65_ffffff_1x400.png) 50% 50% repeat-x; font-weight: bold; color: #eb8f00; outline: none; }
+
+/* Interaction Cues
+----------------------------------*/
+.ui-state-highlight, .ui-widget-content .ui-state-highlight {background: #ffe45c url(images/ui-bg_highlight-soft_75_ffe45c_1x100.png) 50% top repeat-x; color: #363636; }
+.ui-state-highlight a, .ui-widget-content .ui-state-highlight a { color: #363636; }
+
+
+/* Overlays */
+.ui-widget-overlay { background: #aaaaaa/*{bgColorOverlay}*/ url(images/ui-bg_flat_0_aaaaaa_40x100.png)/*{bgImgUrlOverlay}*/ 50%/*{bgOverlayXPos}*/ 50%/*{bgOverlayYPos}*/ repeat-x/*{bgOverlayRepeat}*/; opacity: .3;filter:Alpha(Opacity=30)/*{opacityOverlay}*/; }
+.ui-widget-shadow { margin: -8px/*{offsetTopShadow}*/ 0 0 -8px/*{offsetLeftShadow}*/; padding: 8px/*{thicknessShadow}*/; background: #aaaaaa/*{bgColorShadow}*/ url(images/ui-bg_flat_0_aaaaaa_40x100.png)/*{bgImgUrlShadow}*/ 50%/*{bgShadowXPos}*/ 50%/*{bgShadowYPos}*/ repeat-x/*{bgShadowRepeat}*/; opacity: .3;filter:Alpha(Opacity=30)/*{opacityShadow}*/; -moz-border-radius: 8px/*{cornerRadiusShadow}*/; -webkit-border-radius: 8px/*{cornerRadiusShadow}*/; }

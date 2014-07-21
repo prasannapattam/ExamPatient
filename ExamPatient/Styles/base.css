@@ -1,0 +1,13 @@
+body,h1,h2,h3,h4,h5,h6,form,fieldset,legend,ul,ol,li,img,fieldset,blockquote,caption,table,tr,dl,dt,dd { margin: 0; padding: 0; }
+h1,h2,h3,h4,h5,h6 { font-weight: normal; }
+img { border: 0; }
+a { text-decoration: none; outline: none; }
+
+/* ------ Basic Structure ----- */
+
+
+#wrapper {
+	font-size: 1.2em;
+	text-align: left;
+	padding: 20px;
+}
