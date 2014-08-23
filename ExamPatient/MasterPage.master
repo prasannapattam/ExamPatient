@@ -41,9 +41,9 @@
                 previousRow = firstRow;
             if (previousRow == row)
                 return;
-            //If there is row clicked earlier
+                //If there is row clicked earlier
             else if (previousRow != null)
-            //change the color of the previous row back to white
+                //change the color of the previous row back to white
                 document.getElementById(previousRow).style.backgroundColor = "#ebecec";
 
             //change the color of the current row to light yellow
@@ -67,7 +67,9 @@
             if (pagetype == 'exam')
                 pageurl = 'ExamPatient.aspx?PatientID=';
             if (pagetype == 'patient')
+            {
                 pageurl = 'Patient.aspx?PatientID=';
+            }
             if (pagetype == 'history')
                 pageurl = 'History.aspx?PatientID=';
             if (pagetype == 'schedule')
@@ -89,16 +91,30 @@
             if (pagetype == 'default')
                 pageurl = 'ExamPatient.aspx?ExamDefaultID=';
 
-//            if (pagetype == 'user')
-//                pageurl += $('#patientID').val();
-//            else
-//            {
-//                pageurl += $('#patientID').val();
-//            }
+            //            if (pagetype == 'user')
+            //                pageurl += $('#patientID').val();
+            //            else
+            //            {
+            //                pageurl += $('#patientID').val();
+            //  
 
+
+            
             pageurl += $('#patientID').val();
 
             location.href = pageurl;
+            return false;
+
+        }
+
+        function RedirectFileBrowser() {
+            //alert('hi');
+            var examID = $('#hdnPatientID').val();
+
+            pageurl = 'FileBrowser.aspx?PatientID=' + examID 
+               // pageurl += $('#patientID').val();
+                location.href = pageurl;
+                
             return false;
 
         }

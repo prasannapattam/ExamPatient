@@ -2,7 +2,7 @@
 <%@ Register TagPrefix="dct" Namespace="Exam" Assembly="App_Code" %>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-<script language="javascript">
+    <script language="javascript">
     function SetPCP() {
         if ($("#cbPCP").attr('checked') == 'checked') {
             var refd = $("#tbRefd").val();
@@ -118,6 +118,11 @@
                             SkinID="skinBtn"></asp:Button>
                             <asp:ValidationSummary ID="vsummary" runat="server" ShowMessageBox="True" ShowSummary="false" HeaderText=""/>
                     </td>
+                    <td>
+                            <asp:Button ID="btnFileBrowser"  Text="File Browser" SkinID="skinBtn"  CausesValidation="false" runat="server"
+                                OnClientClick="return RedirectFileBrowser('filebrowser');" />
+
+                        </td>
                 </tr>
             </table>
             <asp:Label ID="resultError" runat="server" Text="" SkinID="skinError" Width="500" Visible="false"></asp:Label>
