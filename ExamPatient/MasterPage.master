@@ -107,13 +107,11 @@
 
         }
 
-        function RedirectFileBrowser() {
-            //alert('hi');
-            var examID = $('#hdnPatientID').val();
+        function RedirectToFileManager() {
+            var patientID = $('#hdnPatientID').val();
 
-            pageurl = 'FileBrowser.aspx?PatientID=' + examID 
-               // pageurl += $('#patientID').val();
-                location.href = pageurl;
+            pageurl = 'FileManager.aspx?PatientID=' + patientID
+            location.href = pageurl;
                 
             return false;
 

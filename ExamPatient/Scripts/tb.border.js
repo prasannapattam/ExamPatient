@@ -12,6 +12,8 @@
                      //getting the input text type
                     var $input = $(this);
                     var inputtype = $input.attr('type');
+                    if (inputtype === undefined)
+                        return;
                     var inputTypedValue = inputtype.toLowerCase();
                     if(inputTypedValue == 'text' || inputTypedValue == 'password')
                     {

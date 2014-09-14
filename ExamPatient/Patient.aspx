@@ -119,8 +119,8 @@
                             <asp:ValidationSummary ID="vsummary" runat="server" ShowMessageBox="True" ShowSummary="false" HeaderText=""/>
                     </td>
                     <td>
-                            <asp:Button ID="btnFileBrowser"  Text="File Browser" SkinID="skinBtn"  CausesValidation="false" runat="server"
-                                OnClientClick="return RedirectFileBrowser('filebrowser');" />
+                            <asp:Button ID="btnFileManager"  Text="Documents" SkinID="skinBtn"  CausesValidation="false" runat="server"
+                                OnClientClick="return RedirectToFileManager();" />
 
                         </td>
                 </tr>
