@@ -51,7 +51,9 @@ public partial class FileManager : System.Web.UI.Page
 
     protected void fmPatient_ToolbarCommand(object sender, CommandEventArgs e)
     {
+        string patientID = Request.QueryString["PatientID"];
         Response.Write(fmPatient.CurrentDirectory.VirtualPath);
+        Response.Write(patientID);
         if (e.CommandName == "CreateScan")
         {
             //string zipFile = System.IO.Path.Combine(FileManager1.CurrentDirectory.PhysicalPath,
