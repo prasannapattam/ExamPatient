@@ -13,8 +13,6 @@
             HiddenFilesAndFoldersPrefix="_" ShowHiddenFilesAndFolders="true" HiddenFiles="config, ini">
             <CustomToolbarButtons>
                 <iz:CustomToolbarButton Text="Scan" CommandName="CreateScan" ImageUrl="images/16x16/scanner.png" />
-                <iz:CustomToolbarButton Text="Scan" PerformPostBack="false" OnClientClick="alert('Hello!')"
-                    ImageUrl="images/16x16/scanner.png" />
             </CustomToolbarButtons>
             <Templates>
                 <iz:NewDocumentTemplate Name="HTML Page" NewFileName="New HTML File" MasterFileUrl="Templates/HTMLPage.htm" />

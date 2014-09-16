@@ -51,45 +51,12 @@ public partial class FileManager : System.Web.UI.Page
 
     protected void fmPatient_ToolbarCommand(object sender, CommandEventArgs e)
     {
-        string patientID = Request.QueryString["PatientID"];
-        Response.Write(fmPatient.CurrentDirectory.VirtualPath);
-        Response.Write(patientID);
         if (e.CommandName == "CreateScan")
         {
-            //string zipFile = System.IO.Path.Combine(FileManager1.CurrentDirectory.PhysicalPath,
-            //                                        "ZIP_" + DateTime.Now.ToString("yyyyMMddHHmmss") + ".zip");
+            string patientID = Request.QueryString["PatientID"];
+            string scanUrl = "~/Scanning.aspx?PatientID=" + patientID + "&path=" + Server.UrlEncode(fmPatient.CurrentDirectory.VirtualPath);
 
-            ////Create an empty zip file
-            //byte[] emptyzip = new byte[] { 80, 75, 5, 6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
-
-            //using (System.IO.FileStream fs = System.IO.File.Create(zipFile))
-            //{
-            //    fs.Write(emptyzip, 0, emptyzip.Length);
-            //    fs.Flush();
-            //    fs.Close();
-            //}
-
-            //string[] selectedItems = new string[FileManager1.SelectedItems.Length];
-            //for (int i = 0; i < FileManager1.SelectedItems.Length; i++)
-            //{
-            //    selectedItems[i] = System.IO.Path.GetFileName(FileManager1.SelectedItems[i].PhysicalPath);
-            //}
-            ////Copy a folder and its contents into the newly created zip file
-            //Shell32.ShellClass sc = new Shell32.ShellClass();
-            //Shell32.Folder DestFlder = sc.NameSpace(zipFile);
-            //Shell32.Folder SrcFlder = sc.NameSpace(FileManager1.CurrentDirectory.PhysicalPath);
-            //Shell32.FolderItems items = SrcFlder.Items();
-            //foreach (Shell32.FolderItem item in items)
-            //{
-            //    if (Array.LastIndexOf<string>(selectedItems, item.Name) >= 0)
-            //        DestFlder.CopyHere(item, 20);
-            //}
-
-            ////Ziping a file using the Windows Shell API creates another thread where the zipping is executed.
-            ////This means that it is possible that this console app would end before the zipping thread 
-            ////starts to execute which would cause the zip to never occur and you will end up with just
-            ////an empty zip file. So wait a second and give the zipping thread time to get started
-            //System.Threading.Thread.Sleep(1000);
+            Response.Redirect(scanUrl, true);
         }
         else
         {

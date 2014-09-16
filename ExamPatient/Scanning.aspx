@@ -1,16 +1,89 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="Scanning.aspx.cs" Inherits="Scanning" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="Scanning.aspx.cs" Inherits="Scanning" Title="Scan" %>
+<%@ Register TagPrefix="dct" Namespace="Exam" Assembly="App_Code" %>
 
-<!DOCTYPE html>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <link href="Styles/scan-style.css" type="text/css" rel="stylesheet" />
 
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <title></title>
-</head>
-<body>
-    <form id="form1" runat="server">
-    <div>
-    
+    <dct:tabs ID="tabFileManager" runat="server">
+        <dct:Tab ID="FileManagerTab" runat="server" HeaderText= "Documents">
+            <asp:Panel ID="pnlMain" runat="server">
+            <fieldset style="background-color:#CEDEFF">
+                <div>
+
+    <div class="DWTPage body_Broad_width">
+        <div class="DWTBody" >
+            <!--This is where Dynamic Web TWAIN control will be rendered.-->
+            <div id="dwtcontrolContainer" class="DWTContainer"></div>
+
+            <!--This is where you add the actual buttons to control the component.-->
+            <div class="ScanWrapper" >
+                <div class="divTableStyle" style="text-align:center;">
+                        <input class="DWTScanButton btn" type="button" value="Scan" onclick="acquireImage();" /> </div>
+                <div style="height:15px;"></div>
+                <div id="divSave" class="divTableStyle" >
+                <ul>
+                    <li><img alt="arrow" src="Images/arrow.gif" width="9" height="12"/><b>Upload Image</b></li>
+                    <li>
+                        <table>
+                            <tr>
+                                <td><label>HTTP Server:</label></td>
+                                <td><input type="text" size="20" id="txtHTTPServer" /></td>
+                            </tr>
+                            <tr>
+                                <td><label>HTTP Port:</label></td>
+                                <td><input type="text" size="20" id="txtHTTPPort" /></td>
+                            </tr>
+                            <tr>
+                                <td><label>User Name:</label></td>
+                                <td><input type="text" size="20" id="txtUserName" /></td>
+                            </tr>
+                            <tr>
+                                <td><label>Password:</label></td>
+                                <td><input type="text" size="20" id="txtPassword" /></td>
+                            </tr>
+                            <tr>
+                                <td><label>Action Page:</label></td>
+                                <td><input type="text" size="20" id="txtActionPage" /></td>
+                            </tr>
+                             <tr>
+                                <td><label>File Name:</label></td>
+                                <td><input type="text" size="20" id="txtFileName" /></td>
+                            </tr>
+                        </table>
+                    </li>
+                    <li>
+	                    <label for="imgTypejpeg">
+		                    <input type="radio" value="jpg" name="ImageType" id="imgTypejpeg" onclick ="rd_onclick();"/>JPEG</label>
+	                    <label for="imgTypetiff">
+		                    <input type="radio" value="tif" name="ImageType" id="imgTypetiff" onclick ="rdTIFF_onclick();"/>TIFF</label>
+	                    <label for="imgTypepng">
+		                    <input type="radio" value="png" name="ImageType" id="imgTypepng" onclick ="rd_onclick();"/>PNG</label>
+	                    <label for="imgTypepdf">
+		                    <input type="radio" value="pdf" name="ImageType" id="imgTypepdf" onclick ="rdPDF_onclick();"/>PDF</label></li>
+                    <li style="padding-left:9px;">
+                        <label for="MultiPageTIFF"><input type="checkbox" id="MultiPageTIFF"/>Multi-Page TIFF</label>
+                        <label for="MultiPagePDF"><input type="checkbox" id="MultiPagePDF"/>Multi-Page PDF </label></li>
+                </ul>
+                <input id="btnUpload" class="DWTScanButton btn" type="button" value="Upload Image" onclick ="btnUpload_onclick()"/>
+                </div>
+                <div id="divInfo"></div>
+            </div>
+            <div class="body_clr"></div>
+        </div>
+        
+        <div style="clear: both; "></div>
     </div>
-    </form>
-</body>
-</html>
+    <script src="Scripts/dynamsoft.webtwain.initiate.js"></script>
+    <script src="Scripts/DWTSample_ScanAndUpload.js"></script>
+    <script>
+        (function () {
+            onPageLoad();
+        })(); 
+    </script>
+                </div>
+            </fieldset>
+            </asp:Panel>
+        </dct:Tab>
+    </dct:tabs> 
+</asp:Content>
+
