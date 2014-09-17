@@ -25,25 +25,25 @@
                     <li><img alt="arrow" src="Images/arrow.gif" width="9" height="12"/><b>Upload Image</b></li>
                     <li>
                         <table>
-                            <tr>
+                            <tr style="display:none">
                                 <td><label>HTTP Server:</label></td>
                                 <td><input type="text" size="20" id="txtHTTPServer" /></td>
                             </tr>
-                            <tr>
+                            <tr style="display:none">
                                 <td><label>HTTP Port:</label></td>
                                 <td><input type="text" size="20" id="txtHTTPPort" /></td>
                             </tr>
-                            <tr>
+                            <tr style="display:none">
                                 <td><label>User Name:</label></td>
                                 <td><input type="text" size="20" id="txtUserName" /></td>
                             </tr>
-                            <tr>
+                            <tr style="display:none">
                                 <td><label>Password:</label></td>
                                 <td><input type="text" size="20" id="txtPassword" /></td>
                             </tr>
                             <tr>
-                                <td><label>Action Page:</label></td>
-                                <td><input type="text" size="20" id="txtActionPage" /></td>
+                                <td><label>Action Page: <% = "~/SaveToFile.aspx1" %></label></td>
+                                <td><input type="text" size="20" id="txtActionPage" value="<% = "~/SaveToFile.aspx1" %>" /></td>
                             </tr>
                              <tr>
                                 <td><label>File Name:</label></td>
@@ -52,26 +52,24 @@
                         </table>
                     </li>
                     <li>
-	                    <label for="imgTypejpeg">
+	                    <label for="imgTypejpeg" style="display: inline;">
 		                    <input type="radio" value="jpg" name="ImageType" id="imgTypejpeg" onclick ="rd_onclick();"/>JPEG</label>
-	                    <label for="imgTypetiff">
+	                    <label for="imgTypetiff" style="display: inline;">
 		                    <input type="radio" value="tif" name="ImageType" id="imgTypetiff" onclick ="rdTIFF_onclick();"/>TIFF</label>
-	                    <label for="imgTypepng">
+	                    <label for="imgTypepng" style="display: inline;">
 		                    <input type="radio" value="png" name="ImageType" id="imgTypepng" onclick ="rd_onclick();"/>PNG</label>
-	                    <label for="imgTypepdf">
+	                    <label for="imgTypepdf" style="display: inline;">
 		                    <input type="radio" value="pdf" name="ImageType" id="imgTypepdf" onclick ="rdPDF_onclick();"/>PDF</label></li>
                     <li style="padding-left:9px;">
-                        <label for="MultiPageTIFF"><input type="checkbox" id="MultiPageTIFF"/>Multi-Page TIFF</label>
-                        <label for="MultiPagePDF"><input type="checkbox" id="MultiPagePDF"/>Multi-Page PDF </label></li>
+                        <label for="MultiPageTIFF" style="display: inline;"><input type="checkbox" id="MultiPageTIFF"/>Multi-Page TIFF</label>
+                        <label for="MultiPagePDF" style="display: inline;"><input type="checkbox" id="MultiPagePDF"/>Multi-Page PDF </label></li>
                 </ul>
                 <input id="btnUpload" class="DWTScanButton btn" type="button" value="Upload Image" onclick ="btnUpload_onclick()"/>
                 </div>
-                <div id="divInfo"></div>
             </div>
             <div class="body_clr"></div>
         </div>
         
-        <div style="clear: both; "></div>
     </div>
     <script src="Scripts/dynamsoft.webtwain.initiate.js"></script>
     <script src="Scripts/DWTSample_ScanAndUpload.js"></script>
