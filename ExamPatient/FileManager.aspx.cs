@@ -47,7 +47,9 @@ public partial class FileManager : System.Web.UI.Page
             if(!String.IsNullOrEmpty(Request.QueryString["path"]))
             {
                 string targetPath = "~" + Request.QueryString["path"];
-                //Response.Write(path + "<br>~" + );
+                targetPath = targetPath.Replace(VirtualPathUtility.ToAbsolute("~"), "");
+                //Response.Write(path + "<br>" + targetPath + "<br>");
+                //Response.Write(VirtualPathUtility.ToAbsolute("~"));
                 fmPatient.Directory = targetPath.Replace(path, "[0]");
             }
         }
