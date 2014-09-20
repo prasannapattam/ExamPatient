@@ -41,9 +41,13 @@
                                 <td><label>Password:</label></td>
                                 <td><input type="text" size="20" id="txtPassword" /></td>
                             </tr>
-                            <tr>
-                                <td><label>Action Page: <% = "~/SaveToFile.aspx1" %></label></td>
-                                <td><input type="text" size="20" id="txtActionPage" value="<% = "~/SaveToFile.aspx1" %>" /></td>
+                            <tr style="display:none">
+                                <td><label>Action Page: </label></td>
+                                <td><input type="text" size="20" id="txtActionPage" value="<% = saveUrl %>" /></td>
+                            </tr>
+                            <tr style="display:none">
+                                <td><label>Redirect Page: </label></td>
+                                <td><input type="text" size="20" id="txtRedirectPage" value="<% = redirectUrl %>" /></td>
                             </tr>
                              <tr>
                                 <td><label>File Name:</label></td>

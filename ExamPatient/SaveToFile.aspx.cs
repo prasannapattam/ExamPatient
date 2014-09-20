@@ -14,13 +14,26 @@ public partial class SaveToFile : System.Web.UI.Page
         {
             HttpFileCollection files = HttpContext.Current.Request.Files;
             HttpPostedFile uploadfile = files["RemoteFile"];
-            
-            String Path = System.Web.HttpContext.Current.Request.MapPath(".") + "/UploadedImages/";
-            if (!Directory.Exists(Path))
+
+            string patientId = Request.QueryString["PatientID"];
+            string path = Request.QueryString["path"];
+
+            path = Server.MapPath(path);
+            string filepath = path + @"\" + uploadfile.FileName;
+
+            if (!Directory.Exists(path))
             {
-                Directory.CreateDirectory(Path);
+                Directory.CreateDirectory(path);
             }
-            uploadfile.SaveAs(Path + uploadfile.FileName);
+
+
+            if (File.Exists(filepath))
+            {
+                Response.Write("Unable to save, file already exists");
+            }
+
+            uploadfile.SaveAs(filepath);
+            //Response.Redirect("FileManager.aspx?PatientID=" + patientId);
         }
         catch (Exception exc)
         {

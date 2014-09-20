@@ -1,4 +1,5 @@
 ﻿using IZ.WebFileManager;
+using IZ.WebFileManager.Components;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
@@ -40,6 +41,15 @@ public partial class FileManager : System.Web.UI.Page
             rootDirectory.Text = patientName;
             rootDirectory.ShowRootIndex = false;
             fmPatient.RootDirectories.Add(rootDirectory);
+
+            fmPatient.FileViewMode = FileViewRenderMode.Thumbnails;
+            
+            if(!String.IsNullOrEmpty(Request.QueryString["path"]))
+            {
+                string targetPath = "~" + Request.QueryString["path"];
+                //Response.Write(path + "<br>~" + );
+                fmPatient.Directory = targetPath.Replace(path, "[0]");
+            }
         }
     }
 

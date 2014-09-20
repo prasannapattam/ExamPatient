@@ -128,7 +128,11 @@ function btnUpload_onclick() {
                  break;
              }
          }
-         
+         if (varFileName.value === "") {
+             alert('Please specify the file name');
+             return;
+         }
+
          var uploadfilename = varFileName.value + "." + document.getElementsByName("ImageType").item(i).value;
          if (strImageType == 2 && varMultiPageTIFF.checked) {
              if ((DWObject.SelectedImagesCount == 1) || (DWObject.SelectedImagesCount == DWObject.HowManyImagesInBuffer)) {
@@ -167,7 +171,14 @@ function btnUpload_onclick() {
             strImageType);
          }
 
-         alert(DWObject.ErrorString + DWObject.HTTPPostResponseString);
+         if (DWObject.HTTPPostResponseString === "") {
+             var redirectUrl = document.getElementById("txtRedirectPage").value;
+             location.href = redirectUrl;
+         }
+         else
+             alert(DWObject.HTTPPostResponseString);
+
+         //alert(DWObject.HTTPPostResponseString);
      }
 }
 
@@ -189,7 +200,7 @@ function initPara() {
     if (varActionPage) {
         if (location.hostname != "") {
             var CurrentPathName = unescape(location.pathname); // get current PathName in plain ASCII
-            varActionPage.value = CurrentPathName.substring(0, CurrentPathName.lastIndexOf("/") + 1) + "SaveToFile.aspx"; //the ActionPage's file path
+            //varActionPage.value = CurrentPathName.substring(0, CurrentPathName.lastIndexOf("/") + 1) + "SaveToFile.aspx"; //the ActionPage's file path
         }
         else
             varActionPage.value = "SaveToFile.aspx"; //the ActionPage's file path
@@ -200,8 +211,8 @@ function initPara() {
         varImgTypejpeg.checked = true;
 
     varFileName = document.getElementById("txtFileName");
-    if (varFileName)
-        varFileName.value = "WebTWAINImage";
+    //if (varFileName)
+    //    varFileName.value = "WebTWAINImage";
 
     varMultiPageTIFF = document.getElementById("MultiPageTIFF");
     if (varMultiPageTIFF)
