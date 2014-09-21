@@ -46,10 +46,10 @@ public partial class FileManager : System.Web.UI.Page
             
             if(!String.IsNullOrEmpty(Request.QueryString["path"]))
             {
-                string targetPath = "~" + VirtualPathUtility.ToAbsolute("~") + Request.QueryString["path"];
-                targetPath = targetPath.Replace(@"//", @"/");
-                //Response.Write(path + "<br>" + targetPath + "<br>");
-                fmPatient.Directory = targetPath.Replace(path, "[0]");
+                string targetPath = Request.QueryString["path"];
+                string fileMgrPath = VirtualPathUtility.ToAbsolute(path);
+                //Response.Write("targetPath: " + targetPath + "<br>path: " + path + "<br>fileMgrPath: " + fileMgrPath + "<br>FInal: " + targetPath.Replace(fileMgrPath, "[0]"));
+                fmPatient.Directory = targetPath.Replace(fileMgrPath, "[0]");
             }
         }
     }
@@ -66,7 +66,6 @@ public partial class FileManager : System.Web.UI.Page
         {
             string patientID = Request.QueryString["PatientID"];
             string scanUrl = "~/Scanning.aspx?PatientID=" + patientID + "&path=" + Server.UrlEncode(fmPatient.CurrentDirectory.VirtualPath);
-
             Response.Redirect(scanUrl, true);
         }
         else

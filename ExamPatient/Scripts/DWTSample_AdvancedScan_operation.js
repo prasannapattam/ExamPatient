@@ -370,8 +370,9 @@ function btnUpload_onclick() {
     DWObject.HTTPPort = _strPort;
     var CurrentPathName = unescape(location.pathname); // get current PathName in plain ASCII	
     var CurrentPath = CurrentPathName.substring(0, CurrentPathName.lastIndexOf("/") + 1);
-    strActionPage = CurrentPath + _strActionPage; //the ActionPage's file path
+    //strActionPage = CurrentPath + _strActionPage; //the ActionPage's file path
     //var redirectURLifOK = CurrentPath + "DWTSample_List.aspx";
+    strActionPage = _strActionPage; 
     var redirectURLifOK = _strRedirectURL;
     for (i = 0; i < 4; i++) {
         if (document.getElementsByName("ImageType").item(i).checked == true) {

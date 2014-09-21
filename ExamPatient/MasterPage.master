@@ -188,7 +188,7 @@
             style="padding-top: 25px; display:none;" 
             class="modalBackground">
             <div align="center" style="margin-top: 13px;">
-                <img src="../Images/progressInd.gif" />
+                <img src="Images/progressInd.gif" />
                 <span class="updateProgressMessage">Loading ...</span>
             </div>
         </div>
