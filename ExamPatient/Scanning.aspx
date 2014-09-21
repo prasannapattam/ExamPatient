@@ -23,7 +23,7 @@
 <div class="Content_Left">
 <div id="dwtcontrolContainer"></div>
 <div id="DWTNonInstallContainerID" style="width:580px"></div>
-<div id="DWTemessageContainer" style="clear: both;width:580px; display:none"></div>
+<div id="DWTemessageContainer" style="clear: both;width:580px;"></div>
 </div>
 <div class="Content_Right">
 <div id="ScanWrapper">

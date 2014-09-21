@@ -15,7 +15,7 @@ var _divMessageContainer;   // For message display
 //****************** Default value provided. User can change it accordingly ************
 //--------------------------------------------------------------------------------------
 var _bDiscardBlankImage = false;  // User can change it.
-var _bShowMessagePanel = true;
+var _bShowMessagePanel = false;
 var _bShowNavigatorPanel = true;
 var _divDWTSourceContainerID = "source";     // The ID of the container (Usually <select>) which is used to show the available sources. User must specify it.
 var _iLeft, _iTop, _iRight, _iBottom; //These variables are used to remember the selected area
