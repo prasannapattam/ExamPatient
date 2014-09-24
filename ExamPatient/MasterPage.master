@@ -147,7 +147,7 @@
                             </td>
                         
                             <td valign="bottom">
-                                <div id="msTraffic"><asp:Literal ID="ltrl" runat="server" Visible="true">LONG ISLAND PEDIATRIC OPHTHALMOLOGY AND STRABISMUS, P.C.</asp:Literal></div>
+                                <div id="msTraffic"><asp:Literal ID="ltrl" runat="server" Visible="true">Pediatric Ophthalmology of New York</asp:Literal></div>
                             </td>
                         </tr>
                         <tr>
