@@ -20,7 +20,7 @@
             <asp:Panel ID="pnlGrid" runat="server">
                 <asp:GridView ID="AutoCorrectResults" runat="server" AutoGenerateColumns="false" 
                             onrowdatabound="AutoCorrectResults_RowDataBound" ClientIDMode="AutoID"
-                                RowStyle-CssClass="gridRow" CssClass="gridAll" SelectedRowStyle-CssClass="gridSelectedRow"
+                                AlternatingRowStyle-CssClass="gridRowAlternate" RowStyle-CssClass="gridRow" CssClass="gridAll" SelectedRowStyle-CssClass="gridSelectedRow"
                                 AllowPaging="true" datasourceid="AutoCorrectSource" PageSize="25"
                             >
                 <Columns>

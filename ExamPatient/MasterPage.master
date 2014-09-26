@@ -49,7 +49,8 @@
 
                 //change the color of the previous row back to white
                 //document.getElementById(previousRow).style.backgroundColor = "#ebecec";
-                $('#' + previousRow).toggleClass(previousStyle);
+                $('#' + previousRow).removeClass('gridSelectedRow');
+                $('#' + previousRow).addClass(previousStyle);
             }
 
             //change the color of the current row to light yellow
@@ -58,7 +59,8 @@
             //document.getElementById(row).style.backgroundColor = "#ffffda";
             previousRow = row;
             previousStyle = $('#' + row).attr('class');
-            $('#' + row).toggleClass('gridSelectedRow');
+            $('#' + row).removeClass(previousStyle);
+            $('#' + row).addClass('gridSelectedRow');
             //for next row to be clicked
             $('#patientID').val(rowPatientID);
 

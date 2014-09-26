@@ -1557,7 +1557,7 @@
         <td>
             <asp:HiddenField ID="patientID" runat="server" />
             <asp:Button ID="btnReport" runat="server" Text="LETTER" CausesValidation="false" SkinID="skinBtn" />
-            <asp:Button ID="btnHome" runat="server" OnClientClick="location.href='default.aspx';return false;" CausesValidation="false" Text="SEARCH PATIENT" SkinID="skinBtn"></asp:Button> 
+            <asp:Button ID="btnHome" runat="server" OnClientClick="location.href='default.aspx';return false;" CausesValidation="false" Text="SEARCH" SkinID="skinBtn"></asp:Button> 
             <asp:Button ID="btnPrint" runat="server" Text="VIEW/PRINT" SkinID="skinBtn" CausesValidation="false" Visible="false"></asp:Button>
             <asp:Button ID="btnPrintExam" runat="server" Text="VIEW/PRINT" SkinID="skinBtn" CausesValidation="false"></asp:Button>
         </td>
@@ -1581,7 +1581,7 @@
         <tr>
         <td>
             <asp:Button ID="btnContinue" runat="server" Text="CONTINUE" CausesValidation="false" SkinID="skinBtn" />
-            <asp:Button ID="btnSearchPatient" runat="server" OnClientClick="location.href='default.aspx';return false;" CausesValidation="false" Text="SEARCH PATIENT" SkinID="skinBtn"></asp:Button> 
+            <asp:Button ID="btnSearchPatient" runat="server" OnClientClick="location.href='default.aspx';return false;" CausesValidation="false" Text="SEARCH" SkinID="skinBtn"></asp:Button> 
         </td>
         </tr>
         </table>

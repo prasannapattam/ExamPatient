@@ -8,7 +8,7 @@
             </dct:ExamPanel>            
                 <asp:GridView ID="UserResults" runat="server" AutoGenerateColumns="false" DataKeyNames="UserID"
                             onrowdatabound="UserResults_RowDataBound" ClientIDMode="AutoID"
-                                RowStyle-CssClass="gridRow" CssClass="gridAll" SelectedRowStyle-CssClass="gridSelectedRow"
+                             AlternatingRowStyle-CssClass="gridRowAlternate" RowStyle-CssClass="gridRow" CssClass="gridAll" SelectedRowStyle-CssClass="gridSelectedRow"
                             >
                 <Columns>
                     <asp:BoundField HeaderText="First Name" DataField="FirstName"></asp:BoundField>
@@ -25,7 +25,7 @@
                 <table cellspacing="5px">
                     <tr>
                         <td>
-                            <asp:Button ID="btnEditUser" runat="server" Text="VIEW/EDIT USER" SkinID="skinBtn" 
+                            <asp:Button ID="btnEditUser" runat="server" Text="VIEW/EDIT" SkinID="skinBtn" 
                                 OnClientClick="return RedirectPatient('user', 1);" ></asp:Button>
                         </td>
                         <td>

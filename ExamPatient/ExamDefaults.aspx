@@ -15,7 +15,7 @@
             </dct:ExamPanel>            
                 <asp:GridView ID="DefaultResults" runat="server" AutoGenerateColumns="false" DataKeyNames="ExamDefaultID"
                             onrowdatabound="DefaultResults_RowDataBound" ClientIDMode="AutoID"
-                                RowStyle-CssClass="gridRow" CssClass="gridAll" SelectedRowStyle-CssClass="gridSelectedRow"
+                            AlternatingRowStyle-CssClass="gridRowAlternate" RowStyle-CssClass="gridRow" CssClass="gridAll" SelectedRowStyle-CssClass="gridSelectedRow"
                             >
                 <Columns>
                     <asp:BoundField HeaderText="DefaultName" DataField="DefaultName"></asp:BoundField>
@@ -34,7 +34,7 @@
                 <table cellspacing="5px">
                     <tr>
                         <td>
-                            <asp:Button ID="btnEditDefault" runat="server" Text="VIEW/EDIT DEFAULT" SkinID="skinBtn" 
+                            <asp:Button ID="btnEditDefault" runat="server" Text="VIEW/EDIT" SkinID="skinBtn" 
                                 OnClientClick="return RedirectPatient('default', 1);" ></asp:Button>
                         </td>
                         <td>
@@ -44,7 +44,7 @@
                         </td>
                         <td>
                             <asp:Button ID="btnDeleteDefault" CausesValidation="false" OnClick="btnDeleteDefault_Click"
-                                OnClientClick="return ConfirmDelete();" runat="server" Text="DELETE DEFAULT"
+                                OnClientClick="return ConfirmDelete();" runat="server" Text="DELETE"
                                 SkinID="skinBtn"></asp:Button>
                         </td>
                     </tr>
