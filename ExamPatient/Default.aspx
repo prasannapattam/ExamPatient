@@ -5,7 +5,7 @@
     <dct:tabs ID="tabPatients" runat="server" HideTab="true">
         <dct:Tab ID="PatientTab" runat="server" HeaderText= "SEARCH">
             <dct:ExamPanel id="pnlSearch" runat="server" HeaderText="Search Patient">
-            <fieldset style="background-color:#CEDEFF; width: 935px;">
+            <fieldset style="background-color:#CEDEFF;">
             <table>
                 <tr>
                     <td class="labelHeaderStyle">Patient Number:</td>
@@ -16,13 +16,13 @@
                 <tr>
                     <td class="labelHeaderStyle">First Name:</td>
                     <td>
-                        <asp:TextBox ID="tbFirstName" MaxLength="20" runat="server" SkinID="skintxtSmall"></asp:TextBox>
+                        <asp:TextBox ID="tbFirstName" MaxLength="20" runat="server" SkinID="skintxtXMedium"></asp:TextBox>
                     </td>
                 </tr>
                 <tr>
                     <td class="labelHeaderStyle">Last Name:</td>
                     <td>
-                        <asp:TextBox ID="tbLastName" MaxLength="20" runat="server" SkinID="skintxtSmall"></asp:TextBox>
+                        <asp:TextBox ID="tbLastName" MaxLength="20" runat="server" SkinID="skintxtXMedium"></asp:TextBox>
                     </td>
                 </tr>
                 </table>
@@ -30,7 +30,7 @@
                 <table cellspacing="5px">
                     <tr>
                         <td>
-                            <asp:Button ID="btnSearch" runat="server" Text="SEARCH PATIENT" SkinID="skinBtn" 
+                            <asp:Button ID="btnSearch" runat="server" Text="SEARCH" SkinID="skinBtn" 
                                 onclick="btnSearch_Click"></asp:Button>
                         </td>
                         <td>
@@ -45,7 +45,7 @@
             <dct:ExamPanel ID="pnlResults" runat="server" Visible="false" HeaderText="Search Results">
                 <asp:GridView ID="patientResults" runat="server" AutoGenerateColumns="false" DataKeyNames="PatientID"
                             onrowdatabound="patientResults_RowDataBound" ClientIDMode="AutoID"
-                                RowStyle-CssClass="gridRow" CssClass="gridAll" SelectedRowStyle-CssClass="gridSelectedRow"
+                             AlternatingRowStyle-CssClass="gridRowAlternate" RowStyle-CssClass="gridRow" CssClass="gridAll" SelectedRowStyle-CssClass="gridSelectedRow"
                             >
                 <Columns>
                     <asp:BoundField HeaderText="Patient Number" DataField="PatientNumber"></asp:BoundField>
@@ -64,7 +64,7 @@
                         </td>
                         <td>
                             <asp:Button ID="btnEditPatient" CausesValidation="false"
-                                OnClientClick="return RedirectPatient('patient');" runat="server" Text="VIEW/EDIT PATIENT"
+                                OnClientClick="return RedirectPatient('patient');" runat="server" Text="VIEW/EDIT"
                                 SkinID="skinBtn"></asp:Button>
                         </td>
                         <td>

@@ -116,71 +116,73 @@ public partial class Report : System.Web.UI.Page
         //1.43 + 6.56 = 7.99  ==> 2000 + 9200 = 11200
 
         GetTableCellRun(trHeader, 2000, JustificationValues.Left, 0, true);
-        //InsertAPicture(package, Server.MapPath(@"/ExamPatient/Images/WordImage.jpg"));
-        InsertPicture(package, Server.MapPath(@"/ExamPatient/Images/WordImage.jpg"));
-        paragraph.Append(GetTextRun("", "Cambria", 8, false, false, 2));
-        paragraph.Append(GetTextRun("", "Cambria", 22, false, false, 2));
-        paragraph.Append(GetTextRun("PedsEyeMD.com", "Cambria", 22, true, true, 0));
         paragraph.Append(GetTextRun("", "Cambria", 18, false, false, 6));
+        paragraph.Append(GetTextRun("", "Cambria", 18, false, false, 6));
+        //InsertAPicture(package, Server.MapPath(@"/ExamPatient/Images/WordImage.jpg"));
+        //InsertPicture(package, Server.MapPath(@"~/Images/WordImage.jpg"));
 
-        run = GetTextRun("146 Manetto Hill Rd.", "Cambria", 14, false, false, 1);
-        run.Append(new Text("Plainview, NY 11803"));
+        run = GetTextRun("30 East 40th Street", "Cambria", 14, false, false, 1);
+        run.Append(new Text("Suite 405"));
         run.Append(new Break());
-        run.Append(new Text("T  (516) 942-4400"));
+        run.Append(new Text("New York, NY 10016"));
         run.Append(new Break());
-        run.Append(new Text("F  (516) 942-4403"));
+        run.Append(new Text("(212) 684-3980"));
         paragraph.Append(run);
         paragraph.Append(GetTextRun("", "Cambria", 16, false, false, 3));
 
-        run = GetTextRun("60 North Country Rd.", "Cambria", 14, false, false, 1);
-        run.Append(new Text("Pt Jefferson, NY  11777"));
+        run = GetTextRun("77 Worth Street", "Cambria", 14, false, false, 1);
+        run.Append(new Text("Ground Floor"));
         run.Append(new Break());
-        run.Append(new Text("T  (631) 474-4200"));
+        run.Append(new Text("New York, NY 10013"));
         run.Append(new Break());
-        run.Append(new Text("F  (631) 474-4202"));
+        run.Append(new Text("(212) 684-3980"));
         paragraph.Append(run);
         paragraph.Append(GetTextRun("", "Cambria", 16, false, false, 3));
 
-        run = GetTextRun("157 East 72nd Street", "Cambria", 14, false, false, 1);
-        run.Append(new Text("New York, NY  10021"));
+        run = GetTextRun("1075 Central Park Avenue", "Cambria", 14, false, false, 1);
+        run.Append(new Text("Suite 403"));
         run.Append(new Break());
-        run.Append(new Text("T  (212) 517-9931"));
+        run.Append(new Text("Scarsdale, NY 10583"));
         run.Append(new Break());
-        run.Append(new Text("F  (212) 249-2174"));
+        run.Append(new Text("(914) 713-3390 "));
         paragraph.Append(run);
         paragraph.Append(GetTextRun("", "Cambria", 16, false, false, 7));
 
         //Pediatric Ophthalmology
         paragraph.Append(GetTextRun("Pediatric Ophthalmology", "Cambria", 18, true, false, 2));
-        paragraph.Append(GetTextRun("Maury A. Marmor, MD", "Cambria", 14, false, false, 0));
+        paragraph.Append(GetTextRun("Frederick M. Wang, MD", "Cambria", 14, false, false, 0));
         paragraph.Append(GetTextRun("", "Cambria", 10, false, false, 2));
-        paragraph.Append(GetTextRun("Eric L. Roberts, MD", "Cambria", 14, false, false, 0));
+        paragraph.Append(GetTextRun("Brian Campolattaro, MD", "Cambria", 14, false, false, 0));
         paragraph.Append(GetTextRun("", "Cambria", 10, false, false, 2));
-        paragraph.Append(GetTextRun("Richard E. Koty, MD", "Cambria", 14, false, false, 0));
+        paragraph.Append(GetTextRun("Anthony Panarelli, MD", "Cambria", 14, false, false, 0));
         paragraph.Append(GetTextRun("", "Cambria", 10, false, false, 2));
-        paragraph.Append(GetTextRun("Michelle Levi, MD", "Cambria", 14, false, false, 0));
+        paragraph.Append(GetTextRun("Idil Bilgin, MD", "Cambria", 14, false, false, 0));
         paragraph.Append(GetTextRun("", "Cambria", 16, true, false, 4));
 
         //Optometry
-        paragraph.Append(GetTextRun("Optometry", "Cambria", 18, true, false, 2));
-        paragraph.Append(GetTextRun("Kenneth H. Sorkin, OD", "Cambria", 14, false, false, 0));
-        paragraph.Append(GetTextRun("", "Cambria", 10, false, false, 2));
-        paragraph.Append(GetTextRun("Jill A. Marcus, OD", "Cambria", 14, false, false, 0));
-        paragraph.Append(GetTextRun("", "Cambria", 16, true, false, 4));
+        //paragraph.Append(GetTextRun("Optometry", "Cambria", 18, true, false, 2));
+        //paragraph.Append(GetTextRun("Kenneth H. Sorkin, OD", "Cambria", 14, false, false, 0));
+        //paragraph.Append(GetTextRun("", "Cambria", 10, false, false, 2));
+        //paragraph.Append(GetTextRun("Jill A. Marcus, OD", "Cambria", 14, false, false, 0));
+        //paragraph.Append(GetTextRun("", "Cambria", 16, true, false, 4));
 
         //Orthoptics
-        paragraph.Append(GetTextRun("Orthoptics", "Cambria", 18, true, false, 2));
-        paragraph.Append(GetTextRun("Ricki Cohen-Marro, CO", "Cambria", 14, false, false, 0));
-        paragraph.Append(GetTextRun("", "Cambria", 10, false, false, 2));
-        paragraph.Append(GetTextRun("Leslie Blatt-Englander, CO", "Cambria", 14, false, false, 0));
-        paragraph.Append(GetTextRun("", "Cambria", 10, false, false, 2));
-        paragraph.Append(GetTextRun("Rachel Krawiec, CO", "Cambria", 14, false, false, 0));
-        paragraph.Append(GetTextRun("", "Cambria", 16, true, false, 4));
+        //paragraph.Append(GetTextRun("Orthoptics", "Cambria", 18, true, false, 2));
+        //paragraph.Append(GetTextRun("Ricki Cohen-Marro, CO", "Cambria", 14, false, false, 0));
+        //paragraph.Append(GetTextRun("", "Cambria", 10, false, false, 2));
+        //paragraph.Append(GetTextRun("Leslie Blatt-Englander, CO", "Cambria", 14, false, false, 0));
+        //paragraph.Append(GetTextRun("", "Cambria", 10, false, false, 2));
+        //paragraph.Append(GetTextRun("Rachel Krawiec, CO", "Cambria", 14, false, false, 0));
+        //paragraph.Append(GetTextRun("", "Cambria", 16, true, false, 4));
 
         //Administration
-        paragraph.Append(GetTextRun("Administration", "Cambria", 18, true, false, 2));
-        paragraph.Append(GetTextRun("Jaime Metzger", "Cambria", 14, false, false, 0));
-        paragraph.Append(GetTextRun("", "Cambria", 16, true, false, 4));
+        //paragraph.Append(GetTextRun("Administration", "Cambria", 18, true, false, 2));
+        //paragraph.Append(GetTextRun("Jaime Metzger", "Cambria", 14, false, false, 0));
+        //paragraph.Append(GetTextRun("", "Cambria", 16, true, false, 4));
+
+        paragraph.Append(GetTextRun("", "Cambria", 22, false, false, 2));
+        paragraph.Append(GetTextRun("childrenseyeny.com", "Cambria", 18, true, true, 0));
+        paragraph.Append(GetTextRun("", "Cambria", 18, false, false, 6));
 
         GetTableCellRun(trHeader, 9200, JustificationValues.Left, 0, true);
         //run.Append(new Text("Second line"));
@@ -270,9 +272,8 @@ public partial class Report : System.Web.UI.Page
         paragraph.Append(GetTextRun("", "Cambria", 24, false, false, 1));
         paragraph.Append(GetTextRun(doctorName, "Cambria", 24, true, false, 0));
         paragraph.Append(GetTextRun("", "Cambria", 10, false, false, 3));
-        paragraph.Append(GetTextRun("LONG ISLAND PEDIATRIC OPHTHALMOLOGY AND STRABISMUS, PC", "Cambria", 30, true, false, 0));
+        paragraph.Append(GetTextRun("Pediatric Ophthalmology of New York, P.C", "Cambria", 30, true, false, 0));
         paragraph.Append(GetTextRun("", "Century Gothic", 21, false, false, 2));
-
 
         //EXAMDATE
         run = GetParaRun();

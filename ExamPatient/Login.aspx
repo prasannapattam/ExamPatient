@@ -11,7 +11,7 @@
                     <td class="labelHeaderStyle">User Name:</td>
                     <td style="width: 255px">
                         <asp:TextBox ID="tbUserName" MaxLength="20" runat="server" 
-                            SkinID="skintxtSmall" Width="218px"></asp:TextBox>
+                            SkinID="skintxtXMedium" Width="218px"></asp:TextBox>
                         <asp:RequiredFieldValidator ID="rfv3" runat="server" ControlToValidate="tbUserName" ErrorMessage="User Name is required" ForeColor="Red">*</asp:RequiredFieldValidator>
                     </td>
                 </tr>
@@ -19,7 +19,7 @@
                     <td class="labelHeaderStyle">Password:</td>
                     <td style="width: 255px">
                         <asp:TextBox ID="tbPassword" MaxLength="20" runat="server" 
-                            SkinID="skintxtSmall" TextMode="Password" Width="218px"></asp:TextBox>
+                            SkinID="skintxtXMedium" TextMode="Password" Width="218px"></asp:TextBox>
                         <asp:RequiredFieldValidator ID="rfv4" runat="server" ControlToValidate="tbPassword" ErrorMessage="Password is required" ForeColor="Red">*</asp:RequiredFieldValidator>
                     </td>
                 </tr>

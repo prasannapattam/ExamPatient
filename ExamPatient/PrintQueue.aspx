@@ -8,7 +8,7 @@
             <br />
             &nbsp;<b>Doctor:</b>&nbsp;&nbsp; <asp:DropDownList ID="ddlFilter" runat="server" OnSelectedIndexChanged="ddlFilter_SelectedIndexChanged" AutoPostBack="true"></asp:DropDownList>
 
-            <asp:GridView ID="PrintGrid" runat="server" AutoGenerateColumns="false" DataKeyNames="PrintQueueID"
+            <asp:GridView ID="PrintGrid" runat="server" AutoGenerateColumns="false" DataKeyNames="PrintQueueID" AlternatingRowStyle-CssClass="gridRowAlternate"
                         ClientIDMode="AutoID" RowStyle-CssClass="gridRow" CssClass="gridAll" SelectedRowStyle-CssClass="gridSelectedRow"
                         onrowdatabound="PrintGrid_RowDataBound" 
                         >

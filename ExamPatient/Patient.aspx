@@ -36,9 +36,9 @@
                             <asp:ListItem Value="Ms.">Ms.</asp:ListItem> 
                             <asp:ListItem Value="Dr.">Dr.</asp:ListItem> 
                         </asp:DropDownList>
-                        <asp:TextBox ID="tbFirstName" MaxLength="20" runat="server" SkinID="skintxtSmall"></asp:TextBox>
-                        <asp:TextBox ID="tbMiddleName" MaxLength="20" runat="server" SkinID="skintxtSmall"></asp:TextBox>
-                        <asp:TextBox ID="tbLastName" MaxLength="20" runat="server" SkinID="skintxtSmall"></asp:TextBox>
+                        <asp:TextBox ID="tbFirstName" MaxLength="20" runat="server" SkinID="skintxtXMedium"></asp:TextBox>
+                        <asp:TextBox ID="tbMiddleName" MaxLength="20" runat="server" SkinID="skintxtMini"></asp:TextBox>
+                        <asp:TextBox ID="tbLastName" MaxLength="20" runat="server" SkinID="skintxtXMedium"></asp:TextBox>
                     </td>
                 </tr>
                 <tr>

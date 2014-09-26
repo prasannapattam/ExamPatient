@@ -35,23 +35,31 @@
 
         //variable that will store the id of the last clicked row
         var previousRow;
+        var previousStyle;
 
         function ChangeRowColor(row, firstRow, rowPatientID, savedInd) {
-            if (previousRow == null)
+            if (previousRow == null) {
                 previousRow = firstRow;
+                previousStyle = 'gridRow';
+            }
             if (previousRow == row)
                 return;
                 //If there is row clicked earlier
-            else if (previousRow != null)
+            else if (previousRow != null) {
+
                 //change the color of the previous row back to white
-                document.getElementById(previousRow).style.backgroundColor = "#ebecec";
+                //document.getElementById(previousRow).style.backgroundColor = "#ebecec";
+                $('#' + previousRow).toggleClass(previousStyle);
+            }
 
             //change the color of the current row to light yellow
 
             var obj = document.getElementById(row);
-            document.getElementById(row).style.backgroundColor = "#ffffda";
-            //for next row to be clicked
+            //document.getElementById(row).style.backgroundColor = "#ffffda";
             previousRow = row;
+            previousStyle = $('#' + row).attr('class');
+            $('#' + row).toggleClass('gridSelectedRow');
+            //for next row to be clicked
             $('#patientID').val(rowPatientID);
 
             if (savedInd == 1)
@@ -138,28 +146,27 @@
                 <div id="msheadContent" align="left">
                     <table width="991px">
                         <tr>
-                            <td rowspan="2" width="50px">
+                            <td rowspan="2" width="30px">
                                 <div id="msLogo">
                                     <a href="default.aspx">
-                                        <img id="ImgLogo" src="~/Images/newlogo.gif" runat="server" width="50" height="50" alt="" visible="true" /></a>
-                                        
+<%--                                        <img id="ImgLogo" src="~/Images/newlogo.gif" runat="server" width="50" height="50" alt="" visible="true" /></a>--%>
                                 </div>
                             </td>
                         
                             <td valign="bottom">
-                                <div id="msTraffic"><asp:Literal ID="ltrl" runat="server" Visible="true">Pediatric Ophthalmology of New York</asp:Literal></div>
+                                <div id="msTraffic"><asp:Literal ID="ltrl" runat="server" Visible="true">Pediatric Ophthalmology of New York, P.C</asp:Literal></div>
                             </td>
                         </tr>
                         <tr>
-                            <td valign="bottom" align="right" nowrap="nowrap">
+                            <td valign="top" align="right" nowrap="nowrap">
                                 <asp:Panel ID="pnlMenu" runat="server">
-                                    <a class="mnu" href="default.aspx">Home</a><span class="mnuText">|</span>
+                                    <a class="mnu" href="default.aspx">Home</a><span class="mnuText"> |</span>
 <%--                                    <a class="mnu" href="Dashboard.aspx">Dashboard</a><span class="mnuText">|</span>
---%>                                    <a class="mnu" href="PrintQueue.aspx">Print Queue</a><span class="mnuText">|</span> 
-                                    <a class="mnu" href="ExamDefaults.aspx">Defaults</a><span class="mnuText">|</span> 
-                                    <a class="mnu" href="DropDowns.aspx">Drop Downs</a><span class="mnuText">|</span> 
-                                    <a class="mnu" href="AutoCorrect.aspx">Autocorrect</a><span class="mnuText">|</span> 
-                                    <a class="mnu" href="User.aspx">Users</a><span class="mnuText">|</span> 
+--%>                                    <a class="mnu" href="PrintQueue.aspx">Print Queue</a><span class="mnuText"> |</span> 
+                                    <a class="mnu" href="ExamDefaults.aspx">Defaults</a><span class="mnuText"> |</span> 
+                                    <a class="mnu" href="DropDowns.aspx">Drop Downs</a><span class="mnuText"> |</span> 
+                                    <a class="mnu" href="AutoCorrect.aspx">Autocorrect</a><span class="mnuText"> |</span> 
+                                    <a class="mnu" href="User.aspx">Users</a><span class="mnuText"> |</span> 
                                     <a class="mnu" href="Logout.aspx">Logout</a>
                                 </asp:Panel>
                             </td>

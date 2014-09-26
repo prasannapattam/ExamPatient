@@ -748,7 +748,8 @@ namespace Exam
                         txtDay.Attributes.Add("onKeyDown", "return readOnlyKeyDownFn();");
                         txtYear.Attributes.Add("onKeyDown", "return readOnlyKeyDownFn();");
                     }
-                    ScriptManager.RegisterStartupScript(this, this.GetType(), this.ClientID, "$(document).ready(function () {ProcessExecute('" + txtYear.ClientID + "');});", true);
+                    string vpPath = VirtualPathUtility.GetDirectory("~");
+                    ScriptManager.RegisterStartupScript(this, this.GetType(), this.ClientID, "$(document).ready(function () {ProcessExecute('" + txtYear.ClientID + "', '" + vpPath + "');});", true);
                     break;
                 case ControlTypes.PhoneNumber:
                     txtArea.ReadOnly = IsReadOnly;

@@ -171,10 +171,10 @@ function AssignNewDate(id) {
     return false;
 }
 
-function ProcessExecute(id) {
+function ProcessExecute(id, virtualDirectory) {
     $("#" + id).datepicker({
         showOn: 'button',
-        buttonImage: '/exampatient/Images/expand_button1.gif',
+        buttonImage: virtualDirectory + 'Images/expand_button1.gif',
         buttonImageOnly: true,
         changeMonth: true,
         changeYear: true,

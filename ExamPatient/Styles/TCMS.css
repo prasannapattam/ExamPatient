@@ -31,8 +31,12 @@ body
     background-repeat: repeat-x;
 }
 
+.mnu{
+    font-size: 1.1em;
+}
 .mnuText
 {
+    font-size: 1.1em;
     color: #FFFFFF;
 }
 
@@ -70,7 +74,7 @@ body
 
 #msLogo
 {
-    width: 60px;
+    width: 30px;
     height: 50px;
     float: left;
     padding-top: 21px;
@@ -129,7 +133,7 @@ body
 #msTraffic
 {
     float: left;
-    font-size: 17px;
+    font-size: 19px;
     color: white;
     height: auto;
     width: 590px;
@@ -154,7 +158,7 @@ body
 .exampanel
 {
     cursor: pointer;
-    width: 938px;
+    width: 100%;
     height: 26px;
     background-image: url(../images/panelbg.gif);
     background-repeat: repeat-x;
@@ -458,10 +462,11 @@ body
     position: relative;
     float: left;
     background-image: url(../images/blue_butbg.gif);
+    background-size: 100px 30px;
     color: #FFFFFF;
     display: block;
-    width: 125px;
-    height: 33px;
+    width: 100px;
+    height: 30px;
     margin: 0;
     padding: 0;
     font-size: 12px;
@@ -848,12 +853,14 @@ body
 
 .comboStyle
 {
-    height: 20px;
+    height: 22px;
     width: auto;
     font-size: 11px;
     font-weight: bold;
     color: #1e344b;
     border: #1e344b solid 1px;
+    margin:0;
+    padding-top: 2px;
 }
 .comboStyle_CCHistory
 {
@@ -863,6 +870,7 @@ body
     font-weight: bold;
     color: #1e344b;
     border: #1e344b solid 1px;
+    margin:0;
 }
 .multilinetext
 {
@@ -1082,25 +1090,37 @@ body
                  font-size: 11px; font-family: Arial; font-weight: bold;  text-align:left;}
 
 .gridRow { padding: 2px; padding-left:6px;  font-size: 11px;
+    line-height: 14px;
     font-family: Arial;
     font-weight:normal;
     text-align:left;
 	border-right: 1px solid #C3C9CE;
-	background-image: url(images/row2.gif);
 		background-repeat:repeat-x;
 		background-position:bottom;
-		background-color:#ebecec;
+		background-color:#ffffff;
 	
 	color:#1e344b;  }
 	
 .gridSelectedRow { padding: 2px; padding-left:6px;  font-size: 11px;
+    line-height: 14px;
     font-family: Arial;
     font-weight:normal;
     text-align:left;
 	border-right: 1px solid #C3C9CE;
-	background-image: url(images/row2.gif);
 		background-repeat:repeat-x;
 		background-position:bottom;
 		background-color:#ffffda;
+	
+	color:#1e344b;  }
+
+.gridRowAlternate { padding: 2px; padding-left:6px;  font-size: 11px;
+    line-height: 14px;
+    font-family: Arial;
+    font-weight:normal;
+    text-align:left;
+	border-right: 1px solid #C3C9CE;
+		background-repeat:repeat-x;
+		background-position:bottom;
+		background-color:#e0e7ff;
 	
 	color:#1e344b;  }

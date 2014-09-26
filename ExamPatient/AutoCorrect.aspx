@@ -48,7 +48,7 @@
                                 SkinID="skinBtn"></asp:Button>
                         </td>
                         <td>
-                            <asp:Button ID="btnCopy" runat="server" Text="Copy from Existing" SkinID="skinBtn" OnClick="btnCopy_Click"></asp:Button>
+                            <asp:Button ID="btnCopy" runat="server" Text="Copy from Existing" SkinID="skinBtn" OnClick="btnCopy_Click"  style="width: 140px;background-size: 140px 30px;background-repeat: no-repeat;"></asp:Button>
                         </td>
                     </tr>
                 </table>

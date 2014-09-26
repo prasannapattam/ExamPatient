@@ -30,7 +30,7 @@
 <div id="divScanner" class="divinput">
     <ul class="PCollapse">
         <li>
-        <div class="divType"><div class="mark_arrow expanded"></div>Custom Scan</div>
+        <div class="divType"><div class="mark_arrow expanded"></div>Scan</div>
             <div id="div_ScanImage" class="divTableStyle">
                 <ul id="ulScaneImageHIDE" >
                     <li style="padding-left: 15px;">
@@ -184,6 +184,13 @@
         <input id="btnUpload" type="button" value="Upload Image" onclick ="btnUpload_onclick()"/></li>
 </ul>
 </div>
+<div id="divUpdate" class="divinput" style="position:relative; display:none">
+<ul>
+    <li><img alt="arrow" src="Images/arrow.gif" width="9" height="12"/><b>Save Image</b></li>
+    <li style="text-align: center">
+        <input id="btnUpdate" type="button" value="Save Image" onclick ="btnUpload_onclick()"/></li>
+</ul>
+</div>
 
 <div id="divUpgrade">
 </div>
@@ -273,6 +280,17 @@
 
     _strActionPage = "<% = saveUrl %>";
     var _strRedirectURL = "<% = redirectUrl %>";
+
+    //DWObject.HTTPDownload("localhost", "/WebTWAIN/Images/ImageData.jpg");
+    function ScanBeforeLoad() {
+        //$('.divinput').not('#divEdit').hide();
+        //$('#divUpdate').show();
+
+        //_strDefaultSaveImageName = "New2.jpg";
+    }
+    function ScanAfterLoad(dw) {
+        //dw.HTTPDownload("localhost:2520", "/Data/00000/0000/001/New2.jpg");
+    }
 </script>
                 </div>
             </fieldset>

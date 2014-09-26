@@ -355,8 +355,8 @@
                 <asp:TextBox ID="Occupation" MaxLength="50" runat="server" SkinID="skintxtSmall" ReadOnly="false"></asp:TextBox>
             </td>
             <td>
-                <asp:Button ID="btnEditPatient" runat="server" SkinID="skinBtnSmall" Text="Edit" UseSubmitBehavior="false" CausesValidation="false" 
-                        OnClientClick="return EditPatient()"></asp:Button>
+                <asp:Button ID="btnEditPatient" runat="server" SkinID="skinBtnSmall" Text="Edit" UseSubmitBehavior="false" CausesValidation="false"
+                        OnClientClick="return EditPatient()" Visible="False"></asp:Button>
             </td>
         </tr>
     </table>
@@ -398,9 +398,7 @@
        
         <table>
         
-        <tr><td style="text-align: center; background-color:#BBBBBB; font-size: small;" 
-                colspan="2">
-            <strong style="font-size: x-small">Past Ocular/Medical History</strong></td></tr>
+        <tr><td class="note-band" colspan="2"><strong>Past Ocular/Medical History</strong></td></tr>
             <tr style="background-color:#CEDEFF">
                 <td style="width: 480px; height: 280px;">
                     <table>
@@ -718,6 +716,7 @@
                             <tr><td style="height: 19px"></td></tr>
                         </table>
                         </fieldset>
+                        <table width="100%"><tr><td class="note-band-blank" colspan="2"></td></tr></table>
                         <fieldset style="background-color:#CEDEFF">
                         <table>
                             <tr>
@@ -756,9 +755,8 @@
                             </tr>
                           </table>
                           </fieldset>  
-                      
+                            <table width="100%"><tr><td class="note-band" colspan="2"><strong>Prior Exam</strong></td></tr></table>
                             <fieldset style="background-color:#E0E7FF">
-                           <legend>Prior Exam</legend>
                             <table>
                             <tr>
                                 <td class="labelHeaderStyle" width="50">Man Rfx</td>
@@ -796,8 +794,8 @@
                             </tr>
                             </table>
                             </fieldset>
-                            
-                           <fieldset style="background-color:#CEDEFF">
+                            <table width="100%"><tr><td class="note-band-blank" colspan="2"></td></tr></table>
+                           <fieldset style="background-color:#CEDEFF;">
                             <table>
                             <tr>
                                 <td class="labelHeaderStyle" width="50">Rx given</td>
@@ -838,6 +836,7 @@
                             </tr>
                             </table>
                         </fieldset>
+                        <table width="100%"><tr><td class="note-band-blank" colspan="2"></td></tr></table>
                         <fieldset style="background-color:#E0E7FF">
                         <table>
                             <tr><td>&nbsp;</td></tr>
@@ -1028,6 +1027,7 @@
                 </tr>
             </table>
              </fieldset>
+        <table width="100%"><tr><td class="note-band-blank" colspan="2"></td></tr></table>
              <fieldset style="background-color:#E0E7FF">
             <table width="700">
                 <tr>
@@ -1102,6 +1102,7 @@
                 </tr>
             </table>
             </fieldset>
+            <table width="100%"><tr><td class="note-band-blank" colspan="2"></td></tr></table>
             <fieldset style="background-color:#CEDEFF">
             <table>
                 <tr>
@@ -1178,6 +1179,7 @@
                 </table>
                         
             </fieldset>
+            <table width="100%"><tr><td class="note-band-blank" colspan="2"></td></tr></table>
             <fieldset style="background-color:#E0E7FF">
             <table>
                 <tr>

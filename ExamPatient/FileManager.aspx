@@ -7,7 +7,7 @@
             <asp:Panel ID="pnlMain" runat="server">
             <fieldset style="background-color:#CEDEFF">
                 <div>
-        <iz:FileManager ID="fmPatient" runat="server" Height="400px" Width="900px"
+        <iz:FileManager ID="fmPatient" runat="server" Height="400px" Width="953px"
             ClientIDMode="AutoID"
             OnToolbarCommand="fmPatient_ToolbarCommand"
             HiddenFilesAndFoldersPrefix="_" ShowHiddenFilesAndFolders="true" HiddenFiles="config, ini">

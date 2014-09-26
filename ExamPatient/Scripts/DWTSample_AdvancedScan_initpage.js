@@ -150,12 +150,14 @@ function Dynamsoft_ChangeConfig(config){
 
 // OnLoad event before using DWT 
 function Dynamsoft_OnLoad() {
+    ScanBeforeLoad();  //this is Exam Patient routine for hiding the controls
     getEnvironment();
     
     initMessageBox(false);  //Messagebox
     initCustomScan();       //CustomScan
 
     initiateInputs();
+
 }
 
 // Event fired When the control is not loaded.
@@ -270,6 +272,7 @@ function Dynamsoft_OnReady() {
 	if (!ua.indexOf('msie 6.0')) {
 		ShowSiteTour();
 	}
+	ScanAfterLoad(DWObject); //this is Exam Patient routine for hiding the controls
 }
 
 //------------------------------------------------------------------------------------------

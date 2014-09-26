@@ -21,7 +21,7 @@ namespace Exam
             imgtopTab.SkinID = "imgTop";
             Controls.Add(new LiteralControl("<div style='padding-left:8px;'>"));
             Controls.Add(imgtopTab);
-            Controls.Add(new LiteralControl(@"<FIELDSET></FIELDSET>"));
+            //Controls.Add(new LiteralControl(@"<FIELDSET></FIELDSET>"));
             Controls.Add(new LiteralControl("<div class='tabBackground'>"));
             Controls.Add(new LiteralControl("<div style='padding-left:1px;'>"));
             HideTab = false; //by default show the tabs
