@@ -415,6 +415,7 @@ public partial class PrintPatient : System.Web.UI.Page
             run = GetParaRun();
         }
         AppendLine("Stereoacuity (Titmus)", "Stereo1", "Stereo2");
+        AppendLine("+ 4 diopter base out", "DiopterBaseOut");
         AppendHeadLine("", true, true, 4);
 
         //ANTSEG4
