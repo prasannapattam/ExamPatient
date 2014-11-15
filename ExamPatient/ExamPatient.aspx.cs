@@ -225,7 +225,7 @@ public partial class ExamPatient : System.Web.UI.Page
                         SetPriorValues();
 
                     //loading the overriding defaults
-                    LoadExamDefaults(userDefaultID);
+                    LoadExamDefaults(userDefaultID, patientID);
 
                     if (notesType == ExamNotesType.New)
                     {
@@ -253,7 +253,7 @@ public partial class ExamPatient : System.Web.UI.Page
 
                 //supressing the defaults -- for poony
                 hdnDefaultInd.Value = "";
-                LoadExamDefaults(userDefaultID);
+                LoadExamDefaults(userDefaultID, patientID);
             }
             drExam.Close();
             drExam.Dispose();
@@ -315,7 +315,7 @@ public partial class ExamPatient : System.Web.UI.Page
         drUserDefaults.Dispose();
     }
 
-    public void LoadExamDefaults(string examDefaultID)
+    public void LoadExamDefaults(string examDefaultID, string patientID)
     {
         if (examDefaultID != "" && examDefaultID != null)
         {
@@ -326,6 +326,7 @@ public partial class ExamPatient : System.Web.UI.Page
             SetValues(drExamDefault.GetString(0));
             drExamDefault.Close();
             drExamDefault.Dispose();
+            PopulateHeader(patientID);
         }
     }
 

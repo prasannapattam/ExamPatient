@@ -255,7 +255,7 @@
             var userDefaultID = $('#ddlUserDefaults').val();
             var confirmationMessage = 'Do you want to loose your changes and load defaults for ' + userDefaultText;
             if (userDefaultID === "0") {
-                confirmationMessage = 'Do you want to loose your changes and load blank notes';
+                confirmationMessage = 'Do you want to loose your changes and re-load notes';
                 userDefaultID = "";
             }
 
@@ -273,6 +273,26 @@
             }
             else {
             }
+        }
+
+        function PopulateTicTacTo() {
+            var ocMotDefault = $("#OcMotDefault").val();
+            if (ocMotDefault === '') {
+                alert('Please enter a default value');
+                return false;
+            }
+
+            $("#OcMot1a").val(ocMotDefault);
+            $("#OcMot2a").val(ocMotDefault);
+            $("#OcMot3a").val(ocMotDefault);
+            $("#OcMot4a").val(ocMotDefault);
+            $("#OcMot5a").val(ocMotDefault);
+            $("#OcMot6a").val(ocMotDefault);
+            $("#OcMot7a").val(ocMotDefault);
+            $("#OcMot8a").val(ocMotDefault);
+            $("#OcMot9a").val(ocMotDefault);
+
+            return false;
         }
 
     </script>
@@ -789,6 +809,7 @@
                             </tr>
                           </table>
                           </fieldset>  
+                            <asp:Panel ID="pnlPriorExam" runat="server" Visible="false">
                             <table width="100%"><tr><td class="note-band" colspan="2"><strong>Prior Exam</strong></td></tr></table>
                             <fieldset style="background-color:#E0E7FF">
                             <table>
@@ -828,6 +849,7 @@
                             </tr>
                             </table>
                             </fieldset>
+                            </asp:Panel>
                             <table width="100%"><tr><td class="note-band-blank" colspan="2"></td></tr></table>
                            <fieldset style="background-color:#CEDEFF;">
                             <table>
@@ -969,7 +991,19 @@
                     <td colspan="2" class="labelHeaderStyle"><asp:CheckBox ID="OMDefaults" runat="server" onclick="AcceptDefaults('OcularTab');" /> Accept defaults </td>
                 </tr>
                 <tr>
-                    <td colspan="2" class="labelHeaderStyle">&nbsp;Ocular Motility:</td>
+                    <td colspan="2">
+                        <table width="100%">
+                            <tr>
+                                <td class="labelHeaderStyle">&nbsp;Tic Tac To:</td>
+                                <td style="text-align:right">
+                                    <asp:TextBox ID="OcMotDefault" MaxLength="50" runat="server" SkinID="skintxtSmall" ></asp:TextBox>  
+                                    &nbsp;&nbsp;                                  
+                                    <asp:Button ID="btnTicTacToPopulate" runat="server" SkinID="skinBtnSmall" Text="Populate" UseSubmitBehavior="false" CausesValidation="false"
+                                            OnClientClick="return PopulateTicTacTo()" Visible="True" style="float:right"></asp:Button>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
                 </tr>
                 <tr>
                     <td width="50">&nbsp;&nbsp;&nbsp;</td>
@@ -1231,7 +1265,7 @@
                         <asp:DropDownList ID="W4DNear1" runat="server"></asp:DropDownList>
                         <asp:TextBox ID="W4DNear2" MaxLength="50" runat="server" SkinID="skintxtSmall"></asp:TextBox>
                     </td>
-                    <td class="labelHeaderRightStyle" width="100">W4D  Distance:</td>
+                    <td class="labelHeaderRightStyle" width="100">W4D Distance:</td>
                     <td>
                         <asp:DropDownList ID="W4DDistance1" runat="server"></asp:DropDownList>
                         <asp:TextBox ID="W4DDistance2" MaxLength="50" runat="server" SkinID="skintxtSmall"></asp:TextBox>
@@ -1242,6 +1276,10 @@
                     <td>
                         <asp:DropDownList ID="Stereo1" runat="server"></asp:DropDownList>
                         <asp:TextBox ID="Stereo2" MaxLength="50" runat="server" SkinID="skintxtSmall"></asp:TextBox>
+                    </td>
+                    <td class="labelHeaderRightStyle" width="100">+ 4 diopter base out:</td>
+                    <td>
+                        <asp:DropDownList ID="DiopterBaseOut" runat="server"></asp:DropDownList>
                     </td>
                 </tr>
             </table>
