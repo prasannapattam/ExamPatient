@@ -4,7 +4,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 <script type="text/javascript">
         function ConfirmDelete() {
-        var ret = confirm('Please confirm to delete the current defaults');
+        var ret = confirm('Please confirm to delete the selected default');
         return ret;
     }
 </script>
@@ -19,10 +19,10 @@
                             >
                 <Columns>
                     <asp:BoundField HeaderText="DefaultName" DataField="DefaultName"></asp:BoundField>
-                    <asp:BoundField HeaderText="Age Start (months)" DataField="AgeStart"></asp:BoundField>
-                    <asp:BoundField HeaderText="Age End (months)" DataField="AgeEnd"></asp:BoundField>
-                    <asp:BoundField HeaderText="Premature Birth" DataField="PrematureBirth"></asp:BoundField>
-                    <asp:BoundField HeaderText="Doctor" DataField="DoctorName"></asp:BoundField>
+                    <asp:BoundField HeaderText="Age Start (months)" DataField="AgeStart" Visible="false"></asp:BoundField>
+                    <asp:BoundField HeaderText="Age End (months)" DataField="AgeEnd" Visible="false"></asp:BoundField>
+                    <asp:BoundField HeaderText="Premature Birth" DataField="PrematureBirth" Visible="false"></asp:BoundField>
+                    <asp:BoundField HeaderText="Doctor" DataField="DoctorName" Visible="false"></asp:BoundField>
                 </Columns>
                 </asp:GridView> 
                 <asp:HiddenField ID="patientID" runat="server"></asp:HiddenField>

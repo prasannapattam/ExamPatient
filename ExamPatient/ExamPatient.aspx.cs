@@ -195,6 +195,9 @@ public partial class ExamPatient : System.Web.UI.Page
             throw new ApplicationException("Patient information is not available");
         else
         {
+            string userDefaultID = Request.QueryString["UserDefaultID"];
+            BindExamDefaultDropDown(userDefaultID);
+
             //getting the last Exam record for the patient
             cmdText = "SELECT TOP 1 ExamID FROM EXAM WHERE PatientID = " + hdnPatientID.Value;
             if (examID != "")
@@ -221,6 +224,9 @@ public partial class ExamPatient : System.Web.UI.Page
                     if(notesType != ExamNotesType.Saved)
                         SetPriorValues();
 
+                    //loading the overriding defaults
+                    LoadExamDefaults(userDefaultID);
+
                     if (notesType == ExamNotesType.New)
                     {
                         string lastExamDate = drLastExam["ExamDate"].ToString();
@@ -235,24 +241,19 @@ public partial class ExamPatient : System.Web.UI.Page
 
                     drLastExam.Close();
                     drLastExam.Dispose();
+
                 }
             }
             else
             {
+                //commenting this code out as we are not loading defaults based on age
                 //there is no last exam, so getting the defaults
-                hdnDefaultInd.Value = "1";  //setting an indicator that the system is setting defaults.
-                string examDefaultID = GetDefaultExamID();
+                //hdnDefaultInd.Value = "1";  //setting an indicator that the system is setting defaults.
+                //examDefaultID = GetDefaultExamID();
 
-                if (examDefaultID != "")
-                {
-                    cmdText = String.Format("SELECT ExamText FROM ExamDefault WHERE ExamDefaultID = {0}", examDefaultID);
-
-                    SqlDataReader drExamDefault = DBUtil.ExecuteReader(cmdText);
-                    drExamDefault.Read();
-                    SetValues(drExamDefault.GetString(0));
-                    drExamDefault.Close();
-                    drExamDefault.Dispose();
-                }
+                //supressing the defaults -- for poony
+                hdnDefaultInd.Value = "";
+                LoadExamDefaults(userDefaultID);
             }
             drExam.Close();
             drExam.Dispose();
@@ -299,6 +300,33 @@ public partial class ExamPatient : System.Web.UI.Page
         }
         if (notesType == ExamNotesType.New)
             SetBackgroundColours(1);
+    }
+
+    private void BindExamDefaultDropDown(string userDefaultID)
+    {
+        string cmdText = "SELECT ExamDefaultID, DefaultName FROM ExamDefault";
+        SqlDataReader drUserDefaults = DBUtil.ExecuteReader(cmdText);
+
+        WebUtil.BindLookupDropDown(ddlUserDefaults, drUserDefaults, "DefaultName", "ExamDefaultID");
+        ddlUserDefaults.Items[0].Value = "0"; //setting the blank field value to 0;
+        WebUtil.SelectDropDownValue(ddlUserDefaults, userDefaultID);
+
+        drUserDefaults.Close();
+        drUserDefaults.Dispose();
+    }
+
+    public void LoadExamDefaults(string examDefaultID)
+    {
+        if (examDefaultID != "" && examDefaultID != null)
+        {
+            string cmdText = String.Format("SELECT ExamText FROM ExamDefault WHERE ExamDefaultID = {0}", examDefaultID);
+
+            SqlDataReader drExamDefault = DBUtil.ExecuteReader(cmdText);
+            drExamDefault.Read();
+            SetValues(drExamDefault.GetString(0));
+            drExamDefault.Close();
+            drExamDefault.Dispose();
+        }
     }
 
     private void HideSaveButtons()
@@ -448,7 +476,7 @@ public partial class ExamPatient : System.Web.UI.Page
             DBUtil.Execute(cmdText);
 
             result.Text = "Patient default data successfully saved";
-            btnReport.Text = "EXAM DEFAULTS";
+            btnReport.Text = "DEFAULTS";
             btnReport.Visible = true;
             btnReport.OnClientClick = @"location.href='ExamDefaults.aspx'; return false;";
             result.Visible = true;

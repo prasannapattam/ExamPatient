@@ -75,8 +75,9 @@
         }
 
         var dirty = false;
+        var forceDirty = false;
         window.onbeforeunload = function() {   
-            if (dirty) {    
+            if (dirty === true && forceDirty === false) {
                 return 'You have made changes on this page that you have not yet confirmed. If you navigate away from this page you will loose your unsaved changes';  
             }
         }
@@ -247,6 +248,33 @@
             });
             
         }
+
+        function GetUserDefaults() {
+            var previousUserDefaultID = '<% = Request.QueryString["UserDefaultID"] %>';
+            var userDefaultText = $("#ddlUserDefaults option:selected").text();
+            var userDefaultID = $('#ddlUserDefaults').val();
+            var confirmationMessage = 'Do you want to loose your changes and load defaults for ' + userDefaultText;
+            if (userDefaultID === "0") {
+                confirmationMessage = 'Do you want to loose your changes and load blank notes';
+                userDefaultID = "";
+            }
+
+            if (userDefaultID != "0") {
+                if (confirm(confirmationMessage)) {
+                    dirty = false;
+                    forceDirty = true;
+                    var url = location.href.replace('&UserDefaultID=' + previousUserDefaultID, '');
+                    location.href = url + '&UserDefaultID=' + userDefaultID;
+                    return false;
+                }
+                else {
+                    $('#ddlUserDefaults').val(previousUserDefaultID);
+                }
+            }
+            else {
+            }
+        }
+
     </script>
     <br/>
     <asp:Panel ID="pnlDefault" runat="server" Visible="false">
@@ -258,25 +286,28 @@
                 <td class="labelHeaderStyle">
                 <asp:HiddenField ID="hdnExamDefaultID" runat="server" />
                 Default Name:
-                    <asp:TextBox ID="DefaultName" MaxLength="20" runat="server" SkinID="skintxtMedium"></asp:TextBox>
+                    <asp:TextBox ID="DefaultName" MaxLength="50" runat="server" SkinID="skintxtLarge"></asp:TextBox>
                     <asp:RequiredFieldValidator ID="DefaultNameRequired" runat="server" ControlToValidate="DefaultName" Display="Dynamic" ErrorMessage="Default Name is required" ForeColor="Red">*</asp:RequiredFieldValidator>
                 </td>
                 <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                <asp:Panel ID="pnlDefaultAge" runat="server" Visible="false">
                 <td class="labelHeaderStyle">
                 Age Start:
-                    <asp:TextBox ID="AgeStart" MaxLength="4" runat="server" SkinID="skintxtTiny"></asp:TextBox> months
+                    <asp:TextBox ID="AgeStart" MaxLength="4" runat="server" SkinID="skintxtTiny" Text="0"></asp:TextBox> months
                     <asp:RequiredFieldValidator ID="AgeStartRequired" runat="server" ControlToValidate="AgeStart" Display="Dynamic" ErrorMessage="Age Start is required" ForeColor="Red">*</asp:RequiredFieldValidator>
                     <asp:RegularExpressionValidator ID="AgeStartRegEx" runat="server" ControlToValidate="AgeStart" Display="Dynamic" ErrorMessage="Age Start is invalid" ForeColor="Red" ValidationExpression="^\d+$">*</asp:RegularExpressionValidator>
                 </td>
                 <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
                 <td class="labelHeaderStyle">
                 Age End:
-                    <asp:TextBox ID="AgeEnd" MaxLength="4" runat="server" SkinID="skintxtTiny"></asp:TextBox> months
+                    <asp:TextBox ID="AgeEnd" MaxLength="4" runat="server" SkinID="skintxtTiny" Text="0"></asp:TextBox> months
                     <asp:RequiredFieldValidator ID="AgeEndRequired" runat="server" ControlToValidate="AgeEnd" Display="Dynamic" ErrorMessage="Age End is required" ForeColor="Red">*</asp:RequiredFieldValidator>
                     <asp:RegularExpressionValidator ID="AgeEndRegEx" runat="server" ControlToValidate="AgeEnd" Display="Dynamic" ErrorMessage="Age End is invalid" ForeColor="Red" ValidationExpression="^\d+$">*</asp:RegularExpressionValidator>
                 </td>
                 <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                </asp:Panel>
             </tr>
+            <asp:Panel ID="pnlDefaultDoctor" runat="server" Visible="false">
             <tr valign="middle">
                 <td>&nbsp;&nbsp;&nbsp;</td>
                 <td class="labelHeaderStyle">
@@ -289,6 +320,7 @@
                     <asp:DropDownList ID="DoctorList" runat="server"></asp:DropDownList>
                 </td>
             </tr>
+            </asp:Panel>
             </table>
             <br />
         </fieldset>
@@ -335,8 +367,6 @@
                 <asp:DropDownList ID="User" runat="server" OnChange="GetDoctorDefaults()"></asp:DropDownList>
             </td>
         </tr>
-    </table>
-    <table cellspacing="0" cellpadding="2" border="0" id="tblCitHdr">
         <tr valign="middle">
             <td>&nbsp;&nbsp;&nbsp;</td>
             <td class="labelHeaderStyle">Hx From:
@@ -344,17 +374,21 @@
                 <asp:DropDownList id="ddlHxFrom" runat="server" Visible="true"></asp:DropDownList>
                 <asp:TextBox ID="tbHxOther" MaxLength="30" runat="server" SkinID="skintxtSmall" Visible="true"></asp:TextBox>
             </td>
-            <td class="labelHeaderStyle">Ref'd By:
-                <asp:TextBox ID="Refd" MaxLength="50" runat="server" SkinID="skintxtSmall" onchange="SetCopyTo()"></asp:TextBox>
-                (Dr. <asp:TextBox ID="RefDoctor" MaxLength="50" runat="server" SkinID="skintxtSmall" onchange="SetCopyTo()"></asp:TextBox>)
+            <td colspan="5" class="labelHeaderStyle">Ref'd By:
+                <asp:TextBox ID="Refd" MaxLength="50" runat="server" SkinID="skintxtXMedium" onchange="SetCopyTo()"></asp:TextBox>
+                (Dr. <asp:TextBox ID="RefDoctor" MaxLength="50" runat="server" SkinID="skintxtXMedium" onchange="SetCopyTo()"></asp:TextBox>)
             </td>
-            <td class="labelHeaderStyle">Allergies:
+            <td colspan="3" class="labelHeaderStyle">Allergies:
                 <asp:TextBox ID="Allergies" MaxLength="50" runat="server" SkinID="skintxtMedium" ReadOnly="false"></asp:TextBox>
             </td>
-            <td class="labelHeaderStyle">Grade Level/<br />Occupation:
-                <asp:TextBox ID="Occupation" MaxLength="50" runat="server" SkinID="skintxtSmall" ReadOnly="false"></asp:TextBox>
+        </tr>
+        <tr valign="middle">
+            <td>&nbsp;&nbsp;&nbsp;</td>
+            <td colspan="3" class="labelHeaderStyle">Grade Level/Occupation:
+                <asp:TextBox ID="Occupation" MaxLength="50" runat="server" SkinID="skintxtMedium" ReadOnly="false"></asp:TextBox>
             </td>
-            <td>
+            <td colspan="6" class="labelHeaderStyle" style="text-align:right">Defaults:
+                <asp:DropDownList ID="ddlUserDefaults" runat="server" onChange="return GetUserDefaults()" ></asp:DropDownList>
                 <asp:Button ID="btnEditPatient" runat="server" SkinID="skinBtnSmall" Text="Edit" UseSubmitBehavior="false" CausesValidation="false"
                         OnClientClick="return EditPatient()" Visible="False"></asp:Button>
             </td>
