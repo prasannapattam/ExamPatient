@@ -1,7 +1,9 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2010
-Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "ExamPatient", ".", "{566091ED-8BF2-4A8E-9919-7F928174B590}"
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "ExamPatient(1)", ".", "{566091ED-8BF2-4A8E-9919-7F928174B590}"
 	ProjectSection(WebsiteProperties) = preProject
 		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
 		Debug.AspNetCompiler.VirtualPath = "/ExamPatient"
@@ -24,10 +26,13 @@ EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{566091ED-8BF2-4A8E-9919-7F928174B590}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{566091ED-8BF2-4A8E-9919-7F928174B590}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{566091ED-8BF2-4A8E-9919-7F928174B590}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{566091ED-8BF2-4A8E-9919-7F928174B590}.Release|Any CPU.Build.0 = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -137,7 +137,7 @@
               <tr>
                 <td>
                     <asp:Button ID="btnExamInfant" runat="server" OnClientClick="return false;" CausesValidation="false" Text="EXAM NOTES" SkinID="skinBtn"></asp:Button>
-                    <asp:Button ID="btnHome" runat="server" OnClientClick="location.href='default.aspx';return false;" CausesValidation="false" Text="SEARCH PATIENT" SkinID="skinBtn"></asp:Button> 
+                    <asp:Button ID="btnHome" runat="server" OnClientClick="location.href='default.aspx';return false;" CausesValidation="false" Text="SEARCH" SkinID="skinBtn"></asp:Button> 
                     <asp:Button ID="btnClose" runat="server" OnClientClick="return SetParent()" CausesValidation="false" Text="CLOSE" SkinID="skinBtn" Visible="false"></asp:Button>
                 </td>
               </tr>

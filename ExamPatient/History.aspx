@@ -7,7 +7,7 @@
             <dct:ExamPanel id="pnlHistory" runat="server" HeaderText="History for ">
                 <asp:GridView ID="HistoryResults" runat="server" AutoGenerateColumns="false" DataKeyNames="ExamID"
                             onrowdatabound="HistoryResults_RowDataBound" ClientIDMode="AutoID"
-                                RowStyle-CssClass="gridRow" CssClass="gridAll" SelectedRowStyle-CssClass="gridSelectedRow"
+                            AlternatingRowStyle-CssClass="gridRowAlternate" RowStyle-CssClass="gridRow" CssClass="gridAll" SelectedRowStyle-CssClass="gridSelectedRow"
                             >
                 <Columns>
                     <asp:BoundField HeaderText="Exam Date" DataField="ExamDate" DataFormatString="{0:d}"></asp:BoundField>
